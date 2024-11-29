@@ -409,8 +409,8 @@ def crear_sesion_pago(request):
                     'quantity': 1,
                 }],
                 mode='payment',
-                success_url = 'https://inmueblesesime-6.onrender.com/pago-exitoso/'
-                cancel_url = 'https://inmueblesesime-6.onrender.com/pago-cancelado/'
+                success_url = 'https://inmueblesesime-6.onrender.com/pago-exitoso/',
+                cancel_url = 'https://inmueblesesime-6.onrender.com/pago-cancelado/',
                
                 metadata={
                     'usuario_id': usuario.id,

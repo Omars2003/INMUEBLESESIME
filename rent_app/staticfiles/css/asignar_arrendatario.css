@@ -1,0 +1,99 @@
+/* asignar_arrendatario.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    max-width: 700px;
+    width: 90%;
+    background: #fff;
+    padding: 40px;
+    
+    border-radius: 10px;
+}
+
+/* Header Styles */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button Styles */
+.submit-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-button button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 50%;
+    transition: all 0.3s;
+}
+
+.submit-button button:hover {
+    background-color: #fff;
+    color: #007bff;
+}
+
+/* Reserve Button Styles */
+.reserve-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.reserve-button button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #28a745;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 60%;
+    transition: all 0.3s;
+}
+
+.reserve-button button:hover {
+    background-color: #fff;
+    color: #28a745;
+}

@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Título */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Campos */
+.campo {
+    margin-bottom: 20px;
+    width: 300px;
+}
+
+.campo-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.campo-valor {
+    background-color: #e9e9e9;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-align: left;
+}
+
+/* Contenedor principal de botones */
+.contenedor-botones {
+    display: flex;
+    flex-direction: column; /* Apilar los botones en columna */
+    align-items: center;
+    margin-top: 30px;
+    gap: 10px; /* Espaciado uniforme entre botones */
+}
+
+/* Botones de acción (Editar, Cerrar sesión) */
+.contenedor-acciones {
+    display: flex;
+    gap: 20px; /* Espaciado horizontal entre los botones */
+}
+
+/* Botón genérico */
+.btn {
+    padding: 6px 12px; /* Más delgados */
+    font-size: 14px; /* Texto ligeramente más pequeño */
+    border-radius: 6px; /* Bordes redondeados más suaves */
+    border: 2px solid transparent;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Botón Editar */
+.btn-editar {
+    border-color: #0066cc;
+    position: relative;
+    top: 15px;   /* Empuja hacia abajo desde su posición original */
+    left: 0px;
+    color: #0066cc;
+    background-color: transparent;
+    width: calc(50% - 10px); /* Alinear a la mitad del contenedor */
+    height: 23px;
+    margin-right: auto; /* Alinearlo a la izquierda */
+}
+
+.btn-editar:hover {
+    background-color: #0066cc;
+    color: white;
+}
+
+/* Botón Cerrar Sesión */
+.btn-cerrar {
+    border-color: #da0000;
+      position: relative;
+    top: 15px;   /* Empuja hacia abajo desde su posición original */
+    left: 0px;
+    color: #cc0000;
+    background-color: transparent;
+    width: calc(50% - 10px); /* Alinear a la mitad del contenedor */
+    margin-left: auto; /* Alinearlo a la derecha */
+}
+
+.btn-cerrar:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+.btn-inmuebles {
+    border-color: #ff6600;
+    color: #ff6600;
+    background-color: transparent;
+    width: calc(100% - 25px); /* Coincidir con los bordes de los otros botones */
+    max-width: 300px; /* Limitar el ancho máximo */
+    text-align: center;
+    margin: 15px auto 0 auto; /* Centrar el botón y separarlo del grupo superior */
+    display: block;
+}
+
+.btn-inmuebles:hover {
+    background-color: #ff6600;
+    color: white;
+}
+
+/* Contenedor de botones */
+.contenedor-botones {
+    display: flex;
+    flex-direction: column; /* Apilar botones en columna */
+    align-items: center;
+    margin-top: 30px;
+    gap: 10px; /* Espaciado entre botones */
+}
+
+/* Grupo superior (Editar y Cerrar Sesión) */
+.contenedor-acciones {
+    display: flex;
+    width: 300px; /* Alineado con el ancho de los campos grises */
+    justify-content: space-between; /* Separar botones al máximo */
+}
+
+/* Botón Cerrar Sesión */
+.btn-cerrar {
+    border-color: #cc0000;
+    color: #cc0000;
+    background-color: transparent;
+    width: calc(50% - 10px);
+}
+
+.btn-cerrar:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+/* Botón Mis Inmuebles */
+.btn-inmuebles {
+    border-color: #ff6600;
+    color: #ff6600;
+    background-color: transparent;
+    width: calc(100% - 25px);
+    max-width: 300px;
+    text-align: center;
+    margin: 15px auto 0 auto;
+    display: block;
+}
+
+.btn-inmuebles:hover {
+    background-color: #ff6600;
+    color: white;
+}

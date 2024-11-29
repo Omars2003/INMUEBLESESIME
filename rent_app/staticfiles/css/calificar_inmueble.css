@@ -1,0 +1,103 @@
+/* calificar_inmueble.css */
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container */
+.container1 {
+    max-width: 600px;
+    width: 90%;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Rating */
+.rating {
+    display: flex;
+    direction: rtl; /* Cambia la dirección a la derecha a izquierda para que el primer ítem sea el más bajo */
+}
+
+.rating input[type="radio"] {
+    display: none; /* Esconde los inputs de radio */
+}
+
+.rating label {
+    font-size: 2rem;
+    color: #ddd; /* Gris para las estrellas vacías */
+    cursor: pointer;
+}
+
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input[type="radio"]:checked ~ label {
+    color: #f39c12; /* Amarillo para las estrellas llenas */
+}
+
+.rating label:hover ~ label {
+    color: #f39c12;
+}
+
+/* Esto asegura que las estrellas seleccionadas se llenen comenzando por la izquierda */
+.rating input[type="radio"]:checked ~ label {
+    color: #f39c12;
+}
+
+/* Submit Button */
+.submit-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-button button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.submit-button button:hover {
+    background-color: #0056b3;
+}

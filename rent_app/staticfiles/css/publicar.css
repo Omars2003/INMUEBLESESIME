@@ -1,0 +1,154 @@
+/* static/css/publicar.css */
+
+/* Estilos para la página de publicación de inmueble */
+body {
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin: 20;
+    padding: 20;
+    background-color: #f4f4f4;
+    min-height: 20em;
+}
+
+.p-container {
+    background: #ffffff;
+    max-width: 1400px;
+    height: 900px;
+
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  
+    
+
+h1 {
+    text-align: center;
+    position: relative;
+    top: -10px;   /* Empuja hacia abajo desde su posición original */
+    left: 0px;
+    font-size: 29px;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+.form-section {
+    display: flex;
+    gap: 20px;
+}
+
+.left-column, .right-column {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+.form-control{
+    width: 95%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.form-control-file {
+    height: 500px;
+    border: 2px dashed #bbbbbb;
+    text-align: center;
+    font-size: 16px;
+    color: #555555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.form-control-file::before {
+    content: "Cargar fotos";
+    font-weight: bold;
+    color: #333333;
+    position: absolute;
+    top: 20px;
+    font-size: 16px;
+}
+
+.form-control-file::after {
+    content: "Mínimo 7 y máximo 15";
+    color: #777777;
+    position: absolute;
+    bottom: 20px;
+    font-size: 12px;
+}
+
+.image-preview {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-preview img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    
+}
+
+.image-preview-item {
+    position: relative;
+}
+
+.remove-image {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #6b6161;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 60px;
+}
+
+
+.submit-button {
+    position: relative;
+    top: -200px;   /* Empuja hacia abajo desde su posición original */
+    left: 0px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-button button {
+    position: relative;
+    top: 180px;   /* Empuja hacia abajo desde su posición original */
+    left: 355px;
+    background-color: #f45c43;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #f45c43;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 680px;
+    transition: all 0.3s;
+}
+
+.submit-button button:hover {
+    background-color: #ffffff;
+    color: #f45c43;
+}
+}

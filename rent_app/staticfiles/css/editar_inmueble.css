@@ -1,0 +1,144 @@
+/* editar_inmueble.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.editar-inmueble-container {
+    width: 1400px;
+ 
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.form-section {
+    display: flex;
+    gap: 20px;
+}
+
+.left-column, .right-column {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-control, .form-control-file {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-control-file {
+    height: 150px;
+    border: 1px dashed #bbb;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0px;   /* Empuja hacia abajo desde su posición original */
+    left: -30px;
+    border-radius: 10px;
+}
+
+.form-control-file::before {
+    content: "Cargar fotos";
+    font-weight: bold;
+    color: #333;
+    position: absolute;
+    top: 10px;
+    font-size: 16px;
+}
+
+.form-control-file::after {
+    content: "Mínimo 7 y máximo 15";
+    color: #777;
+    position: absolute;
+    bottom: 20px;
+    font-size: 12px;
+}
+
+.image-preview {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-preview img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.image-preview-item {
+    position: relative;
+}
+
+.remove-image {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #6b6161;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 60px;
+}
+.submit-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-button button {
+    background-color: #f45c43;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #f45c43;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 50%;
+    transition: all 0.3s;
+    position: relative;
+    top: 0px;   /* Empuja hacia abajo desde su posición original */
+    left: 360px;
+}
+
+.submit-button button:hover {
+    background-color: #fff;
+    color: #f45c43;
+} 

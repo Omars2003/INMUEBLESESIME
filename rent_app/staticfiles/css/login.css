@@ -1,0 +1,87 @@
+/* login.css */
+
+/* Contenedor principal del formulario de inicio de sesión */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    width: 300px;
+    text-align: center;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del formulario */
+.login-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo para los campos de input */
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Botones del formulario */
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-button {
+    background-color: white;
+    color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.register-button {
+    color: #ff6600;
+    border-bottom: 2px solid #ff6600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.register-button:hover {
+    color: #ff4500;
+}
+
+/* Mensajes de error */
+.messages {
+    margin: 10px 0;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.message.error {
+    color: red;
+    font-size: 14px;
+}

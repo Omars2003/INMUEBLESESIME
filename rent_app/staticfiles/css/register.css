@@ -1,0 +1,74 @@
+/* static/css/register.css */
+
+/* Estilos para la página de registro */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    padding-top: 80px;
+}
+.main-content {
+    margin-top: 80px; /* Ajusta este valor según la altura del header */
+}
+
+
+.register-container {
+    width: 350px;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 80px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.register-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.register-container p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.register-container label {
+    display: block;
+    text-align: left;
+    margin: 5px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.register-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.register-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #ff6600;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #ff6600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.register-container button:hover {
+    background-color: #ff6600;
+    color: #ffffff;
+}
+
+

@@ -1,0 +1,109 @@
+/* home.css */
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f1e9;
+    color: #333;
+    margin: 0;
+}
+
+/* Filtros */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.filters select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #ffffff;
+}
+
+/* Listados de Inmuebles */
+.listings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.listing {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 250px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.listing:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.listing img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.listing-info {
+    padding: 10px;
+    text-align: left;
+}
+
+.listing-info h3 {
+    font-size: 15px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.listing-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Estilos para los mensajes de Django */
+.messages {
+    margin: 10px 20px;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Botón de Usuario e Inicio de Sesión */
+.user-icon {
+    font-size: 24px;
+    text-decoration: none;
+    color: #ff6600;
+    margin-left: 10px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.user-icon:hover {
+    color: #333;
+    transform: scale(1.1);
+}

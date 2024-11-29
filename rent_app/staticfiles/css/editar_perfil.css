@@ -1,0 +1,94 @@
+.editar-perfil-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.messages {
+    margin-bottom: 20px;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-editar-perfil,
+.form-cambiar-contraseña {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-editar-perfil input,
+.form-cambiar-contraseña input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-editar-perfil .errorlist,
+.form-cambiar-contraseña .errorlist {
+    color: red;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.btn-guardar-cambios {
+    background-color: #218838;
+    color: white;
+    border: 2px solid #218838;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-guardar-cambios:hover {
+    background-color: #ffffff;
+    color: #218838;
+    
+}
+
+.btn-cancelar {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-cancelar:hover {
+    text-decoration: underline;
+}

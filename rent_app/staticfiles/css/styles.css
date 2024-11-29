@@ -1,0 +1,109 @@
+/* styles.css */
+
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    box-sizing: border-box;
+    padding-top: 80px; 
+}
+
+
+
+
+/* Cabecera */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav .button.publicar-button {
+    background-color: #ff6600;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #ff6600;
+    margin-right: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav .button.publicar-button:hover {
+    background-color: #ffffff;
+    color: #ff6600;
+}
+
+.nav .perfil-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ff6600;
+    transition: transform 0.3s;
+}
+
+.nav .perfil-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Margen para que el contenido no quede debajo de la cabecera */
+main {
+    margin-top: 80px; /* Ajusta el margen según la altura de la cabecera */
+}
+
+/* Footer */
+.footer {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Estilos de botones generales */
+.button {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}

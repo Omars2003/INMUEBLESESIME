@@ -23,7 +23,10 @@
                 </div>
                 <div class="actions">
                     <a href="{% url 'editar_inmueble' inmueble.id %}" class="btn-blue">Editar</a>
-                    <button onclick="confirmDelete({{ inmueble.id }})" class="btn-red">Eliminar</button>
+                    <form action="{% url 'eliminar_inmueble' inmueble.id %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="button" onclick="confirmDelete({{ inmueble.id }})" class="btn-red">Eliminar</button>
+                    </form>
                     {% if inmueble.estado == 'rentado' %}
                        <form action="{% url 'volver_a_rentar' inmueble.id %}" method="post">
                            {% csrf_token %}
@@ -56,17 +59,20 @@
 <script>
     let inmuebleIdToDelete;
 
+    // Función para abrir el modal de confirmación de eliminación
     function confirmDelete(inmuebleId) {
         inmuebleIdToDelete = inmuebleId;
         const modal = document.getElementById('deleteModal');
-        modal.style.display = 'flex';
+        modal.style.display = 'flex';  // Mostrar el modal
     }
 
+    // Función para cerrar el modal
     function closeModal() {
         const modal = document.getElementById('deleteModal');
-        modal.style.display = 'none';
+        modal.style.display = 'none';  // Ocultar el modal
     }
 
+    // Escuchar el clic en el botón de confirmación de eliminación
     document.getElementById('confirmDeleteButton').onclick = function() {
         if (inmuebleIdToDelete) {
             // Crear un formulario para eliminar el inmueble
@@ -75,15 +81,25 @@
             form.action = `/eliminar-inmueble/${inmuebleIdToDelete}/`;
 
             // Agregar CSRF token al formulario
-            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-            const csrfInput = document.createElement('input');
-            csrfInput.type = 'hidden';
-            csrfInput.name = 'csrfmiddlewaretoken';
-            csrfInput.value = csrfToken;
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]');
+            if (csrfToken) {
+                const csrfInput = document.createElement('input');
+                csrfInput.type = 'hidden';
+                csrfInput.name = 'csrfmiddlewaretoken';
+                csrfInput.value = csrfToken.value;
+                form.appendChild(csrfInput);
+            }
 
-            form.appendChild(csrfInput);
             document.body.appendChild(form);
-            form.submit();
+            form.submit();  // Enviar el formulario para eliminar el inmueble
+        }
+    }
+
+    // Asegurar que el modal pueda cerrarse haciendo clic fuera de él
+    window.onclick = function(event) {
+        const modal = document.getElementById('deleteModal');
+        if (event.target === modal) {
+            closeModal();
         }
     }
 </script>

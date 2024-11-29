@@ -33,7 +33,9 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'zany-meme-v7574q565643w999-8000.app.github.dev',
-]
+    'Omars2003.pythonanywhere.com'
+    ]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

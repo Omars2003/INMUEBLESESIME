@@ -2,7 +2,7 @@
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
-
+from django.core.validators import RegexValidator
 
 class Inmueble(models.Model):
     TIPOS_INMUEBLE = [
@@ -15,6 +15,7 @@ class Inmueble(models.Model):
         ('0-5 km', '0-5 km'),
         ('5-10 km', '5-10 km'),
         ('10-15 km', '10-15 km'),
+        ('15-20 km', '15-20 km'),
     ]
     ESTADOS = [
         ('disponible', 'Disponible'),
@@ -32,7 +33,11 @@ class Inmueble(models.Model):
     codigo_postal = models.CharField(max_length=10)
     descripcion = models.TextField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
-    numero_contacto = models.CharField(max_length=15)
+    numero_contacto = models.CharField(
+        max_length=10,
+        validators=[RegexValidator(r'^[a-zA-Z]+$', 'El campo solo puede contener letras.')],
+        verbose_name="Número de contacto"
+    )
     calificacion = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
     arrendador = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name="arrendados")
 

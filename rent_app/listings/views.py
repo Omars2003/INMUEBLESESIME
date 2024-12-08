@@ -62,6 +62,9 @@ class RegisterView(CreateView):
         response = super().form_valid(form)
         messages.success(self.request, "Cuenta creada exitosamente. Por favor, inicia sesión.")
         return response
+    def form_invalid(self, form):
+        messages.error(self.request, "El formulario no se llenó correctamente, verifica y vuelve a intentar.")
+        return super().form_invalid(form)
 
 class CustomLoginView(View):
     form_class = EmailAuthenticationForm
@@ -158,6 +161,7 @@ def volver_a_rentar(request, inmueble_id):
 
 @login_required
 def editar_perfil(request):
+    
     if request.method == 'POST':
         if 'btn_guardar_perfil' in request.POST:
             user_form = CustomUserUpdateForm(request.POST, instance=request.user)
@@ -180,6 +184,7 @@ def editar_perfil(request):
     else:
         user_form = CustomUserUpdateForm(instance=request.user)
         password_form = PasswordChangeForm(user=request.user)
+    
 
     return render(request, 'editar_perfil.html', {
         'form': user_form,

@@ -11,7 +11,7 @@ from django.core.exceptions import ValidationError
 class CustomUserCreationForm(UserCreationForm):
     first_name = forms.CharField(label="Nombre y Apellido", max_length=150, required=True)
     
-    email = forms.EmailField(label="Correo electrónico", required=True)
+    email = forms.EmailField(label="Correo electrónico", max_length=50, required=True)
 
     class Meta:
         model = User
@@ -37,8 +37,8 @@ class CustomUserCreationForm(UserCreationForm):
         return user
 
 class CustomUserUpdateForm(forms.ModelForm):
-    first_name = forms.CharField(label="Nombre y Apellido", max_length=150, required=True)
-    email = forms.EmailField(label="Correo electrónico", required=True)
+    first_name = forms.CharField(label="Nombre y Apellido", max_length=50, required=True)
+    email = forms.EmailField(label="Correo electrónico", max_length=50, required=True)
 
     class Meta:
         model = User
@@ -59,8 +59,8 @@ class CustomPasswordChangeForm(PasswordChangeForm):
         return user
     
 class EmailAuthenticationForm(forms.Form):
-    email = forms.EmailField(label="Correo electrónico")
-    password = forms.CharField(label="Contraseña", widget=forms.PasswordInput)
+    email = forms.EmailField(label="Correo electrónico",max_length=30)
+    password = forms.CharField(label="Contraseña", max_length=15, widget=forms.PasswordInput)
 
     def clean(self):
         email = self.cleaned_data.get("email")
@@ -92,8 +92,8 @@ class InmuebleForm(forms.ModelForm):
             'direccion': forms.TextInput(attrs={'class': 'form-control'}),
             'codigo_postal': forms.TextInput(attrs={'class': 'form-control'}),
             'descripcion': forms.Textarea(attrs={'class': 'form-control'}),
-            'precio': forms.NumberInput(attrs={'class': 'form-control'}),
-            'numero_contacto': forms.TextInput(attrs={'class': 'form-control'}),
+            'precio': forms.NumberInput(attrs={'class': 'form-control'},),
+            'numero_contacto': forms.TextInput(attrs={'class': 'form-control'},),
         }
        
 

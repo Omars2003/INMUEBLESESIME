@@ -10,23 +10,38 @@
 {% block content %}
 <div class="main-content">
     <div class="register-container">
-        <h1>Registro</h1>
+        <h1>Porfavor ingresa tus datos</h1>
         
         {% if messages %}
-            <div class="messages">
-                {% for message in messages %}
-                    <div class="message {{ message.tags }}">{{ message }}</div>
-                {% endfor %}
+            <div class="messages-container">
+               {% for message in messages %}
+                  <div class="alert {{ message.tags }}">{{ message }}</div>
+               {% endfor %}
             </div>
         {% endif %}
 
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Registrarse</button>
+            <button type="submit">Crear mi cuenta</button>
         </form>
 
         <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">Iniciar sesión</a></p>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const messagesContainer = document.querySelector(".messages-container");
+    if (messagesContainer) {
+        // Desplazarse para que los mensajes sean visibles
+        messagesContainer.scrollIntoView({ behavior: "smooth" });
+
+        // O hacer que desaparezcan automáticamente
+        setTimeout(() => {
+            messagesContainer.style.display = "none";
+        }, 8000); // 5 segundos
+    }
+});
+</script>
 {% endblock %}

@@ -10,9 +10,11 @@ body {
     margin: 0;
     background-color: #f4f4f4;
     padding-top: 80px;
+    
 }
 .main-content {
-    margin-top: 80px; /* Ajusta este valor según la altura del header */
+    margin-top: 200px;
+     /* Ajusta este valor según la altura del header */
 }
 
 
@@ -23,12 +25,14 @@ body {
     padding: 80px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    margin-top: 200px;
 }
 
 .register-container h1 {
     font-size: 24px;
     margin-bottom: 10px;
     color: #333;
+    margin-top: 50px;
 }
 
 .register-container p {
@@ -72,3 +76,34 @@ body {
 }
 
 
+.messages-container {
+    position: fixed; /* Para mantenerlo siempre visible en la parte superior */
+    top: 100px; /* Ajusta este valor según la altura de tu header */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Puedes ajustar esto según el diseño */
+    max-width: 600px; /* Limitar el ancho para pantallas grandes */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+
+.alert {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6c
+
+}

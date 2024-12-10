@@ -12,10 +12,13 @@ body {
 }
 
 .login-container {
+    position: relative;
+    top: -50px;   /* Empuja hacia abajo desde su posición original */
+    left: 0px;
     width: 300px;
     text-align: center;
     background: #ffffff;
-    padding: 40px;
+    padding: 80px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -38,11 +41,11 @@ body {
 
 /* Botones del formulario */
 .login-container button {
-    width: 100%;
+    width: 320px;
     padding: 10px;
     margin-top: 10px;
     border: 2px solid;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
 }
@@ -60,17 +63,29 @@ body {
 }
 
 .register-button {
+    position: relative;
+    top: 20px;   /* Empuja hacia abajo desde su posición original */
+    left: 0px;
+    width: 265px;
+
+    background-color: white;
     color: #ff6600;
-    border-bottom: 2px solid #ff6600;
+    border: 2px solid #ff6600;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px;
+    padding: 15px 25px;
     text-decoration: none;
-    transition: color 0.3s;
+    display: inline-block
+
 }
 
 .register-button:hover {
-    color: #ff4500;
+    background-color: #ff6600;
+    color: white;
 }
 
 /* Mensajes de error */
+
 .messages {
     margin: 10px 0;
 }

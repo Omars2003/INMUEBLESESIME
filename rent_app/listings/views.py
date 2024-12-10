@@ -168,7 +168,7 @@ def editar_perfil(request):
             if user_form.is_valid():
                 user_form.save()
                 messages.success(request, "Perfil actualizado exitosamente.")
-                return redirect('perfil')
+                return redirect('editar_perfil')
             else:
                 messages.error(request, "Hubo un error al actualizar tu perfil. Revisa la información e inténtalo de nuevo.")
         
@@ -178,7 +178,7 @@ def editar_perfil(request):
                 user = password_form.save()
                 update_session_auth_hash(request, user)  # Evita desconectar al usuario
                 messages.success(request, "Contraseña actualizada exitosamente.")
-                return redirect('perfil')
+                return redirect('editar_perfil')
             else:
                 messages.error(request, "Hubo un error al actualizar la contraseña. Verifica la información e inténtalo de nuevo.")
     else:
@@ -375,9 +375,13 @@ def crear_sesion_pago(request):
         try:
             inmueble = Inmueble.objects.get(id=inmueble_id)
             if Reserva.objects.filter(inmueble=inmueble, estado_pago=True).exists():
+                return render(request, 'inmueble_ya_rentado.html', {
+            'mensaje': 'Este inmueble ya ha sido rentado.'
+        })
 
-            # Si el inmueble ya está rentado, devolver un mensaje indicando el error
-                return JsonResponse({'status': 'error', 'message': 'Este inmueble ya ha sido rentado.'}, status=400)
+                
+
+           
         except Inmueble.DoesNotExist:
             return JsonResponse({'error': 'Inmueble no encontrado.'}, status=400)
 
@@ -414,8 +418,8 @@ def crear_sesion_pago(request):
                     'quantity': 1,
                 }],
                 mode='payment',
-                success_url = 'https://inmueblesesime-6.onrender.com/pago-exitoso/',
-                cancel_url = 'https://inmueblesesime-6.onrender.com/pago-cancelado/',
+                success_url = 'https://zany-meme-v7574q565643w999-8000.app.github.dev/pago-exitoso/',
+                cancel_url = 'https://zany-meme-v7574q565643w999-8000.app.github.dev/pago-cancelado/',
                
                 metadata={
                     'usuario_id': usuario.id,

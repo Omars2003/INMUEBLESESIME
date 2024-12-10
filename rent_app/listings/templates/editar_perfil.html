@@ -39,7 +39,7 @@
     </form>
 
     <!-- Formulario de Cambio de Contraseña -->
-    <h2>Cambiar Contraseña</h2>
+    <h2><br>Cambiar Contraseña</h2>
     <form method="post" class="form-cambiar-contraseña">
         {% csrf_token %}
         {{ password_form.non_field_errors }}
@@ -59,6 +59,6 @@
         <button type="submit" name="btn_cambiar_contrasena" class="btn-guardar-cambios">Guardar cambios</button>
     </form>
 
-    <a href="{% url 'perfil' %}" class="btn-cancelar">Cancelar</a>
+    <a href="{% url 'perfil' %}" class="btn-cancelar">Salir</a>
 </div>
 {% endblock %}

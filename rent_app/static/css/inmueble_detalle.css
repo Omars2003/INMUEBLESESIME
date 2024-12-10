@@ -8,7 +8,9 @@ body {
 }
 
 .detail-container {
-
+    position: relative;
+    top: 70px;   /* Empuja hacia abajo desde su posición original */
+    left: 0px;
     max-width: 100%;
     width: 1550px;
     height: 570px;
@@ -246,7 +248,9 @@ body {
     position: relative;
     top: -176px;   /* Empuja hacia abajo desde su posición original */
     left: 270px;
-    color: rgb(0, 0, 0); /* Texto blanco */
+    background-color: #636363;
+    color: rgb(255, 255, 255); /* Texto blanco */
+    font-weight: bold;
     padding: 10px 20px; /* Espaciado interno */
     border: none; /* Sin borde */
     border-radius: 8px; /* Bordes redondeados */
@@ -256,25 +260,21 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
     width: 244px;
     height: 54px;
+    border: 2px solid #636363;
 }
 
 
 
-
-
- 
-
-
-
 #btnComentarios:hover {
-    background-color: #636363; /* Azul más oscuro al pasar el mouse */
+    color: #636363;
+    background-color: #ffffff; /* Azul más oscuro al pasar el mouse */
 }
 
 
 
 
 /* Modal */
-.modal {
+.modal{
     display: none;
     position: fixed;
     z-index: 1000;
@@ -287,14 +287,32 @@ body {
     align-items: center;
 }
 
-.modal-content {
-    background-color: white;
+.modal-co{
+    position: relative; /* Para que el botón close se posicione relativo a este contenedor */
+    width: 30%; /* Ancho del modal */
+    margin: 0 auto; /* Centrar modal horizontalmente */
     padding: 20px;
+    background-color: #fff;
     border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
+
+.close {
+    position: absolute; /* Posiciona la "X" respecto al modal */
+    top: 10px; /* Separación desde la parte superior */
+    right: 10px; /* Separación desde la parte derecha */
+    font-size: 20px; /* Tamaño del texto de la "X" */
+    font-weight: bold;
+    color: #333; /* Color de la "X" */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: color 0.3s; /* Efecto al pasar el mouse */
+}
+
+.close:hover {
+    color: #ff6600; /* Cambia el color al pasar el mouse */
+}
+
 
 .buttons button {
     position: relative;

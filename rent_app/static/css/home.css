@@ -2,7 +2,7 @@
 
 /* General */
 body {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     background-color: #f9f1e9;
     color: #333;
     margin: 0;
@@ -10,6 +10,7 @@ body {
 
 /* Filtros */
 .filters {
+    font-family: sans-serif;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -57,6 +58,13 @@ body {
 .listing-info {
     padding: 10px;
     text-align: left;
+    text-decoration: none;
+}
+
+
+.listing a {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Hereda el color del texto del padre */
 }
 
 .listing-info h3 {
@@ -106,4 +114,11 @@ body {
 .user-icon:hover {
     color: #333;
     transform: scale(1.1);
+}
+
+.ecabezdo{
+    text-align: center;
+    font-family:  family system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    
 }

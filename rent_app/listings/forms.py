@@ -7,18 +7,29 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Inmueble, ImagenInmueble, Calificacion
 from listings.models import Calificacion, Reserva
 from django.core.exceptions import ValidationError
+import re
 
 class CustomUserCreationForm(UserCreationForm):
-    first_name = forms.CharField(label="Nombre y Apellido", max_length=150, required=True)
-    
-    email = forms.EmailField(label="Correo electrónico", max_length=50, required=True)
+    first_name = forms.CharField(label="Nombre y Apellido", max_length=50, required=True)
+    email = forms.EmailField(label="Correo electrónico", max_length=30, required=True)
+   
 
     class Meta:
         model = User
-        fields = ("first_name",  "email", "password1", "password2")
+        fields = ("first_name", "email", "password1", "password2")
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Eliminar los textos de ayuda para los campos de contraseña
+        self.fields['password1'].help_text = None
+        self.fields['password2'].help_text = None
+
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
+        pattern = r'^[\w\.-]+@(gmail\.com|hotmail\.com|yahoo\.com)$'
+        if not re.match(pattern, email):
+            raise ValidationError("El correo electrónico debe ser de un dominio válido como gmail.com, hotmail.com o yahoo.com.")
         if User.objects.filter(email=email).exists():
             raise ValidationError("Este correo electrónico ya está registrado.")
         return email
@@ -26,7 +37,6 @@ class CustomUserCreationForm(UserCreationForm):
     def save(self, commit=True):
         user = super().save(commit=False)
         user.first_name = self.cleaned_data["first_name"]
-        
         user.email = self.cleaned_data["email"]
 
         # Utilizar el email como nombre de usuario único.
@@ -36,9 +46,10 @@ class CustomUserCreationForm(UserCreationForm):
             user.save()
         return user
 
+
 class CustomUserUpdateForm(forms.ModelForm):
     first_name = forms.CharField(label="Nombre y Apellido", max_length=50, required=True)
-    email = forms.EmailField(label="Correo electrónico", max_length=50, required=True)
+    email = forms.EmailField(label="Correo electrónico", max_length=30, required=True)
 
     class Meta:
         model = User
@@ -80,6 +91,7 @@ class EmailAuthenticationForm(forms.Form):
         
         self.cleaned_data["user"] = user
         return self.cleaned_data
+        
 
 
 class InmuebleForm(forms.ModelForm):

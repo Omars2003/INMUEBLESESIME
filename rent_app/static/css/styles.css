@@ -2,7 +2,7 @@
 
 /* General */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'FREEMAN', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -46,15 +46,19 @@ body {
 .nav {
     display: flex;
     align-items: center;
+    font-family: sans-serif;
 }
 
 .nav .button.publicar-button {
+    position: relative;
+    top: -3px;
+    left: 0px;
+    font-size: 13px;
     background-color: #ff6600;
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 8px 8px;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: bold;
     border: 2px solid #ff6600;
     margin-right: 20px;
     transition: background-color 0.3s, color 0.3s;
@@ -68,8 +72,7 @@ body {
 .nav .perfil-icon {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    border: 2px solid #ff6600;
+
     transition: transform 0.3s;
 }
 

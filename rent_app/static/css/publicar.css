@@ -13,15 +13,24 @@ body {
 
 .p-container {
     background: #ffffff;
-    max-width: 1400px;
-    height: 900px;
+    max-width: 1600px;
+    height: auto;
 
-    margin: 30px auto;
-    padding: 20px;
+    margin: 0px auto;
+    padding: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
   
-    
+.image{
+    background-image: none;
+        position:relative;
+        height:200px;
+        width:200px;
+        top: 140px;
+        left : -460px;
+        z-index: 0;
+      }
+        
 
 h1 {
     text-align: center;
@@ -35,7 +44,7 @@ h1 {
 
 .form-section {
     display: flex;
-    gap: 20px;
+   gap: 0;
 }
 
 .left-column, .right-column {
@@ -43,7 +52,8 @@ h1 {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+   
 }
 
 .form-group label {
@@ -51,6 +61,8 @@ h1 {
     font-weight: bold;
     margin-bottom: 10px;
     color: #555555;
+    position: relative;
+ 
 }
 
 .form-control{
@@ -63,6 +75,7 @@ h1 {
 
 .form-control-file {
     height: 500px;
+   
     border: 2px dashed #bbbbbb;
     text-align: center;
     font-size: 16px;
@@ -71,6 +84,7 @@ h1 {
     align-items: center;
     justify-content: center;
     position: relative;
+    
 }
 
 .form-control-file::before {
@@ -134,21 +148,21 @@ h1 {
 .submit-button button {
     position: relative;
     top: 180px;   /* Empuja hacia abajo desde su posición original */
-    left: 355px;
-    background-color: #f45c43;
-    color: #ffffff;
+    left: 444px;
+    background-color: #ffffff;
+    color: #0066cc;
     padding: 15px 30px;
     font-size: 18px;
     font-weight: bold;
-    border: 2px solid #f45c43;
+    border: 2px solid #0066cc;
     border-radius: 8px;
     cursor: pointer;
-    width: 680px;
+    width: 687px;
     transition: all 0.3s;
 }
 
 .submit-button button:hover {
-    background-color: #ffffff;
-    color: #f45c43;
+    background-color: #0066cc;
+    color: #ffffff;
 }
 }

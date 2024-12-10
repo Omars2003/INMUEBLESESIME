@@ -13,13 +13,17 @@ body {
     
 }
 .main-content {
-    margin-top: 200px;
+    margin-top: 100px;
      /* Ajusta este valor según la altura del header */
 }
 
 
+
 .register-container {
-    width: 350px;
+    position: relative;
+    top: -155px;   /* Empuja hacia abajo desde su posición original */
+    left: 0px;
+    width: 360px;
     text-align: center;
     background-color: #ffffff;
     padding: 80px;
@@ -30,15 +34,15 @@ body {
 
 .register-container h1 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     color: #333;
-    margin-top: 50px;
+    margin-top: -10px;
 }
 
 .register-container p {
     font-size: 14px;
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .register-container label {
@@ -58,7 +62,7 @@ body {
 }
 
 .register-container button {
-    width: 100%;
+    width: 380px;
     padding: 10px;
     margin-top: 10px;
     border: 2px solid #ff6600;
@@ -104,6 +108,24 @@ body {
 .alert.error {
     background-color: #f8d7da;
     color: #721c24;
-    border-color: #f5c6c
+    border-color: #721c24;
 
 }
+
+ul.errorlist {
+    position: relative;
+    top: -28px;   /* Empuja hacia abajo desde su posición original */
+    left: 0px;
+    list-style: none; /* Elimina las viñetas */
+    color: red; /* Cambia el color del texto */
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    margin: 10px 0; /* Ajusta los márgenes */
+    padding: 0;
+    text-align: left;
+}
+
+ul.errorlist li {
+    margin: 0;
+    padding: 0;
+}
+

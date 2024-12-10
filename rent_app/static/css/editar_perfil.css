@@ -64,8 +64,9 @@ p {
 }
 
 .btn-guardar-cambios {
-    background-color: #218838;
-    color: white;
+    width: 418px;
+    background-color: white;
+    color: #218838;
     border: 2px solid #218838;
     padding: 10px 20px;
     margin-top: 10px;
@@ -75,8 +76,8 @@ p {
 }
 
 .btn-guardar-cambios:hover {
-    background-color: #ffffff;
-    color: #218838;
+    background-color: #218838;
+    color: white;
     
 }
 

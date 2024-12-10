@@ -33,11 +33,7 @@ class Inmueble(models.Model):
     codigo_postal = models.CharField(max_length=10)
     descripcion = models.TextField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
-    numero_contacto = models.CharField(
-        max_length=10,
-        validators=[RegexValidator(r'^[a-zA-Z]+$', 'El campo solo puede contener letras.')],
-        verbose_name="Número de contacto"
-    )
+    numero_contacto = numero_contacto = models.CharField(max_length=15)
     calificacion = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
     arrendador = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name="arrendados")
 

@@ -12,13 +12,26 @@ body {
 }
 
 .editar-inmueble-container {
-    width: 1400px;
- 
-    background: #fff;
-    padding: 40px;
+    background: #ffffff;
+    width: 1600px;
+    height: auto;
+
+    margin: 0px auto;
+    padding: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    border-radius: 8px;
 }
+
+.image{
+    background-image: none;
+        position:relative;
+        height:200px;
+        width:200px;
+        top: 440px;
+        left : -460px;
+        z-index: 0;
+      }
+        
 
 h1 {
     text-align: center;
@@ -37,51 +50,53 @@ h1 {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+   
 }
 
 .form-group label {
     display: block;
     font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
+    margin-bottom: 10px;
+    color: #555555;
+    position: relative;
+ 
 }
 
-.form-control, .form-control-file {
-    width: 100%;
+.form-control{
+    width: 95%;
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 5px;
 }
 
 .form-control-file {
-    height: 150px;
-    border: 1px dashed #bbb;
+    height: 500px;
+   
+    border: 2px dashed #bbbbbb;
     text-align: center;
     font-size: 16px;
-    color: #555;
+    color: #555555;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    top: 0px;   /* Empuja hacia abajo desde su posición original */
-    left: -30px;
-    border-radius: 10px;
+    
 }
 
 .form-control-file::before {
     content: "Cargar fotos";
     font-weight: bold;
-    color: #333;
+    color: #333333;
     position: absolute;
-    top: 10px;
+    top: 20px;
     font-size: 16px;
 }
 
 .form-control-file::after {
     content: "Mínimo 7 y máximo 15";
-    color: #777;
+    color: #777777;
     position: absolute;
     bottom: 20px;
     font-size: 12px;
@@ -123,22 +138,22 @@ h1 {
 }
 
 .submit-button button {
-    background-color: #f45c43;
-    color: #fff;
+    position: relative;
+    top: -150px;   /* Empuja hacia abajo desde su posición original */
+    left: 455px;
+    background-color: #ffffff;
+    color: #0066cc;
     padding: 15px 30px;
     font-size: 18px;
     font-weight: bold;
-    border: 2px solid #f45c43;
+    border: 2px solid #0066cc;
     border-radius: 8px;
     cursor: pointer;
-    width: 50%;
+    width: 667px;
     transition: all 0.3s;
-    position: relative;
-    top: 0px;   /* Empuja hacia abajo desde su posición original */
-    left: 360px;
 }
 
 .submit-button button:hover {
-    background-color: #fff;
-    color: #f45c43;
-} 
+    background-color: #0066cc;
+    color: #ffffff;
+}

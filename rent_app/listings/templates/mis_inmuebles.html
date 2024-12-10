@@ -7,31 +7,41 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container-inmus">
     <h1 class="title">Tus publicaciones</h1>
     {% if inmuebles %}
         {% for inmueble in inmuebles %}
             <div class="inmueble">
+                <!-- Imagen del inmueble -->
                 {% if inmueble.imagenes.all %}
                     <img src="{{ inmueble.imagenes.first.imagen.url }}" alt="Imagen del inmueble">
                 {% else %}
                     <img src="{% static 'images/load-default.jpg' %}" alt="Imagen no disponible">
                 {% endif %}
+
+                <!-- Información del inmueble -->
                 <div class="info">
                     <h3>{{ inmueble.tipo_inmueble }} - MXN {{ inmueble.precio }}</h3>
                     <p>{{ inmueble.descripcion }}</p>
                 </div>
+
+                <!-- Acciones (botones) -->
                 <div class="actions">
+                    <!-- Botón de editar -->
                     <a href="{% url 'editar_inmueble' inmueble.id %}" class="btn-blue">Editar</a>
+                    
+                    <!-- Botón de eliminar -->
                     <form action="{% url 'eliminar_inmueble' inmueble.id %}" method="post" style="display: inline;">
                         {% csrf_token %}
                         <button type="button" onclick="confirmDelete({{ inmueble.id }})" class="btn-red">Eliminar</button>
                     </form>
+
+                    <!-- Botón de volver a rentar -->
                     {% if inmueble.estado == 'rentado' %}
-                       <form action="{% url 'volver_a_rentar' inmueble.id %}" method="post">
-                           {% csrf_token %}
-                           <button type="submit" class="btn btn-secondary">Volver a Rentar</button>
-                       </form>
+                        <form action="{% url 'volver_a_rentar' inmueble.id %}" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn-orange">Volver a Rentar</button>
+                        </form>
                     {% endif %}
                 </div>
             </div>
@@ -41,14 +51,16 @@
     {% endif %}
 </div>
 
+
 <!-- Modal de Confirmación -->
 <div id="deleteModal" class="modal" style="display: none;">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <h2>¿Estás seguro que quieres eliminar este inmueble?</h2>
-        <p>Esta acción no se puede deshacer.</p>
+        <h2>Eliminar publicación</h2>
+        <p>¿Estás seguro que quieres eliminar este inmueble?</p>
+        <p>Esta acción no se puede desacer</p>
         <div class="modal-buttons">
-            <button id="confirmDeleteButton" class="btn-red">Confirmar</button>
+            <button id="confirmDeleteButton" class="btn-red1">Confirmar</button>
             <button onclick="closeModal()" class="btn-cancel">Cancelar</button>
         </div>
     </div>
@@ -103,4 +115,7 @@
         }
     }
 </script>
+
+
+
 {% endblock %}

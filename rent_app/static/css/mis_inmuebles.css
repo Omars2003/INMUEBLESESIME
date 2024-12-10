@@ -1,42 +1,32 @@
 /* Contenedor principal */
-.container {
-    width: 1300px;
-    margin: -5px auto;
+.container-inmus {
+    width: 800px; /* Ajusta el ancho según tu diseño */
+    margin: 20px auto;
     font-family: Arial, sans-serif;
-}
-
-.title {
-    text-align: center;
-    margin-bottom: 30px;
 }
 
 .inmueble {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 15px;
+    overflow: hidden;
     margin-bottom: 15px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .inmueble img {
-    width: 150px;
-    height: 100px;
+    width: 100%;
+    height: 200px; /* Ajusta la altura de la imagen */
     object-fit: cover;
-    border-radius: 10px;
 }
 
 .info {
-    flex: 1;
-    margin-left: 30px;
-    text-align: justify;
-
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
 }
-
-
-    
 
 .info h3 {
     margin: 0;
@@ -44,55 +34,65 @@
     color: #333;
 }
 
-.info p {
-    margin: 5px 0;
-    color: #555;
-}
-
 .actions {
     display: flex;
-    gap: 10px;
-}
-
-.actions button,
-.actions a {
-    padding: 10px 15px;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
 }
 
 /* Botones */
+
+
+/* Botones específicos */
 .btn-blue {
-   
+
+
+    width: 200px;
+    height: 19px;
     background-color: #007bff;
-    color: white;
-    
+    color: #ffffff;
+    border: 2px solid #007bff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 10px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-blue:hover {
-    background-color: #0056b3;
+    color: #007bff;
+    background-color: #ffffff;
 }
 
-.btn-red {
-    background-color: #dc3545;
-    color: white;
-}
 
-.btn-red:hover {
-    background-color: #a71d2a;
-}
 
 .btn-orange {
+   
+    width: 200px;
+    height: 40px;
     background-color: #fd7e14;
-    color: white;
+    color: #ffffff;
+    border: 2px solid #fd7e14;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-orange:hover {
-    background-color: #dc6e0f;
+    color: #fd7e14;
+    background-color: #ffffff;
 }
+
 
 /* Estilos para el modal */
 /* Modal de confirmación */
@@ -126,31 +126,69 @@
 }
 
 .btn-red {
-    background-color: #cc0000;
-    color: #fff;
+    width: 200px;
+    height: 40px;
+    background-color: #da0000;
+    color: #ffffff;
+    border: 2px solid #da0000;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
     padding: 10px 20px;
-    font-size: 16px;
-    border: none;
     border-radius: 8px;
+    text-align: center;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-red:hover {
-    background-color: #a71d2a;
+    color: #da0000;
+    background-color: #ffffff;
+}
+
+.btn-red1 {
+    position: relative;
+    width: 100px;
+    height: 35px;
+    background-color: #ffffff;
+    color: #007bff;
+    border: 2px solid #007bff;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 10px 10px;
+    border-radius: 7px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-red1:hover {
+    color: #ffffff;
+    background-color: #007bff;
 }
 
 .btn-cancel {
-    background-color: #aaa;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
+    position: relative;
+    left: -280px;
+    width: 100px;
+    height: 35px;
+    background-color: #dfdfdf;
+    color: #000000;
+    border: 2px solid #dfdfdf;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 10px 10px;
+    border-radius: 7px;
+    text-align: center;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-cancel:hover {
-    background-color: #888;
+    color: #490000;
+    background-color: #ffffff;
 }
 
 .close {

@@ -116,6 +116,9 @@ class AsignarArrendatarioForm(forms.ModelForm):
         model = Inmueble
         fields = ['arrendatario']
 
+from django import forms
+from django.core.exceptions import ValidationError
+
 class CalificacionForm(forms.ModelForm):
     class Meta:
         model = Calificacion
@@ -124,7 +127,8 @@ class CalificacionForm(forms.ModelForm):
             'fecha_inicio': forms.DateInput(attrs={
                 'type': 'date',
                 'class': 'form-control',
-                'placeholder': 'Selecciona la fecha de inicio'
+                'placeholder': 'Selecciona la fecha de inicio',
+                'maxlength': '2'
             }),
             'fecha_fin': forms.DateInput(attrs={
                 'type': 'date',
@@ -148,13 +152,14 @@ class CalificacionForm(forms.ModelForm):
                 'class': 'form-control',
                 'rows': 4,
                 'placeholder': 'Escribe tu comentario...',
-                'style': 'resize: none;'
+                'style': 'resize: none;',
+                 'maxlength': '250'  # Limitar a 250 caracteres en el frontend
             }),
         }
         labels = {
             'fecha_inicio': 'Fecha de inicio de renta',
             'fecha_fin': 'Fecha de término de renta',
-            'aun_renta': '¿Aún rentas este lugar?',
+            'aun_renta': 'Aun rento este lugar',
             'estrellas': 'Valora este inmueble',
             'comentario': 'Agrega un comentario',
         }

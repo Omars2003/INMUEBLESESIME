@@ -4,7 +4,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f9f1e9;
 }
 
 .detail-container {
@@ -248,8 +248,8 @@ body {
     position: relative;
     top: -176px;   /* Empuja hacia abajo desde su posición original */
     left: 270px;
-    background-color: #636363;
-    color: rgb(255, 255, 255); /* Texto blanco */
+    background-color: #f0f0f0;
+    color: rgb(0, 0, 0); /* Texto blanco */
     font-weight: bold;
     padding: 10px 20px; /* Espaciado interno */
     border: none; /* Sin borde */
@@ -260,14 +260,14 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
     width: 244px;
     height: 54px;
-    border: 2px solid #636363;
+    border: 2px solid #f0f0f0;
 }
 
 
 
 #btnComentarios:hover {
-    color: #636363;
-    background-color: #ffffff; /* Azul más oscuro al pasar el mouse */
+    color: #ffffff;
+    background-color: #8d8d8d; /* Azul más oscuro al pasar el mouse */
 }
 
 

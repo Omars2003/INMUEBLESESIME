@@ -67,10 +67,13 @@ h1 {
 
 .form-control{
     width: 95%;
+    background-color: #f0f0f0; /* Color de fondo gris */
+    border: 1px solid #ccc;   /* Borde gris */
     padding: 10px;
-    font-size: 14px;
-    border: 1px solid #cccccc;
     border-radius: 5px;
+    font-size: 14px;
+    color: #333; 
+    
 }
 
 .form-control-file {

@@ -10,6 +10,8 @@
     {% if reserva_activa %}
         <!-- Mostrar formulario si el usuario tiene reserva activa -->
         <h1>Califica el Inmueble</h1>
+        <p>Aquí podrás agregar comentarios acerca del inmueble</p>
+
         <form method="post">
             {% csrf_token %}
             <div class="form-group">
@@ -27,13 +29,13 @@
             <div class="form-group">
                 <label>Valora este inmueble</label>
                 <div class="rating">
-                    {% for i in "12345" %}
+                    {% for i in "54321" %}
                         <input type="radio" id="star{{ i }}" name="estrellas" value="{{ i }}">
                         <label for="star{{ i }}">&#9733;</label>
                     {% endfor %}
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10);">
                 {{ form.comentario.label_tag }}
                 {{ form.comentario }}
             </div>

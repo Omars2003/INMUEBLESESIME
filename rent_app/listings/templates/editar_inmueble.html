@@ -24,12 +24,12 @@
                 </div>
                 <div class="form-group">
                     <div class="form-control-file">
-                        <input type="file" id="imagenes" name="imagenes" multiple style="opacity: 0; position: absolute; width: 100%; height: 100%; cursor: pointer;" onchange="previewImages(event)">
+                        <input type="file" id="imagenes" name="imagenes" multiple style="opacity: 0; position: absolute; width: 100%; height: 100%; cursor: pointer;z-index: 10;" onchange="previewImages(event)">
                     </div>
                     <div class="image-preview" id="new-image-preview"></div>
                 </div>
             </div>
-
+            <img src="{% static 'images/upload.png' %}" class="image"/>
             <div class="right-column">
                 <div class="form-group">
                     <label for="numero_contacto">Número de contacto</label>
@@ -71,7 +71,7 @@
         </div>
 
         <div class="submit-button">
-            <button type="submit">Guardar cambios</button>
+            <button type="submit">Publicar</button>
         </div>
     </form>
 </div>

@@ -14,10 +14,10 @@ body {
 
 /* Container */
 .container1 {
-    max-width: 600px;
-    width: 90%;
+    width: 600px;
+
     background: #fff;
-    padding: 40px;
+    padding: 60px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     margin-top: 100px;
@@ -27,12 +27,20 @@ h1 {
     text-align: center;
     font-size: 24px;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
+.container1 p{
 
+    text-align: center;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 30px;
+
+}
 /* Form Groups */
 .form-group {
     margin-bottom: 20px;
+    color: #000;
 }
 
 .form-group label {
@@ -87,17 +95,20 @@ h1 {
 }
 
 .submit-button button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 18px;
+    width: 200px;
+    background-color: white;
+    color: #ff6600;
+    border: 2px solid #ff6600;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px;
+    padding: 15px 25px;
+    text-decoration: none;
+    display: inline-block;
     font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
+    
 }
 
 .submit-button button:hover {
-    background-color: #0056b3;
+    background-color: #ff6600;
+    color: white;
 }

@@ -16,7 +16,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .forms import InmuebleForm, CalificacionForm,CustomUserUpdateForm, CustomPasswordChangeForm
 from .models import ImagenInmueble, Inmueble,Calificacion, Reserva
-from django.http import Http404
+from django.http import Http404,HttpResponse
 from django.urls import reverse_lazy
 import stripe
 import json
@@ -276,7 +276,8 @@ def publicar_inmueble(request):
                         return render(request, 'publicar_inmueble.html', {'inmueble_form': inmueble_form})
 
                 messages.success(request, "Inmueble publicado exitosamente.")
-                return redirect('home')
+                return redirect('exito_publicacion')
+
             except Exception as e:
                 print("Error al guardar el inmueble:", str(e))
                 messages.error(request, "Hubo un error al publicar el inmueble. Inténtalo de nuevo.")
@@ -287,6 +288,8 @@ def publicar_inmueble(request):
 
     else:
         inmueble_form = InmuebleForm()
+    
+    
 
     return render(request, 'publicar_inmueble.html', {'inmueble_form': inmueble_form})
 
@@ -396,30 +399,33 @@ def crear_sesion_pago(request):
         try:
             nueva_reserva = Reserva(usuario=usuario, inmueble=inmueble)
             nueva_reserva.save()
-            print(f"Reserva creada con éxito: {nueva_reserva}")
+            
+            
         except Exception as e:
             print(f"Error al crear la reserva: {str(e)}")
             return JsonResponse({'error': 'No se pudo crear la reserva.'}, status=400)
         
         precio_cobrar = int(inmueble.precio * 100) 
+        descripcion = inmueble.descripcion
 
         # Crear la sesión de pago con Stripe
         try:
             session = stripe.checkout.Session.create(
                 payment_method_types=['card'],
                 line_items=[{
+                    
                     'price_data': {
                         'currency': 'mxn',
                         'product_data': {
-                            'name': f'Reserva del Inmueble: {inmueble}',  # Información del inmueble
+                            'name': f'Reserva del Inmueble: {descripcion}',  # Información del inmueble
                         },
                         'unit_amount': precio_cobrar,  # Precio en centavos (20.00 MXN)
                     },
                     'quantity': 1,
                 }],
                 mode='payment',
-                success_url = 'https://inmueblesesime-6.onrender.com/pago-exitoso/',
-                cancel_url = 'https://inmueblesesime-6.onrender.com//pago-cancelado/',
+                success_url = 'https://zany-meme-v7574q565643w999-8000.app.github.dev/pago-exitoso/',
+                cancel_url = 'https://zany-meme-v7574q565643w999-8000.app.github.dev/pago-cancelado/',
                
                 metadata={
                     'usuario_id': usuario.id,
@@ -427,14 +433,15 @@ def crear_sesion_pago(request):
                 }
             )
             return redirect(session.url, code=303)
+          
         except stripe.error.StripeError as e:
             # Manejo de errores específicos de Stripe
             print(f"Error al crear la sesión de pago: {str(e)}")
-            return JsonResponse({'error': 'No se pudo crear la sesión de pago.'}, status=400)
+            return HttpResponse({'error': 'No se pudo crear la sesión de pago.'}, status=400)
         except Exception as e:
             # Cualquier otro error inesperado
             print(f"Error inesperado: {str(e)}")
-            return JsonResponse({'error': 'Ha ocurrido un error inesperado.'}, status=400)
+            return HttpResponse(f"Error: {str(e)}", status=400)
 
 
 
@@ -511,3 +518,7 @@ def stripe_webhook(request):
                 print(f"Error inesperado al actualizar la reserva: {str(e)}")
 
     return JsonResponse({'status': 'success'}, status=200)
+
+
+def exito_publicacion(request):
+    return render(request, 'exito_publicacion.html')

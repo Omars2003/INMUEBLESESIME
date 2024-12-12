@@ -48,6 +48,7 @@ urlpatterns = [
     path('stripe-webhook/', views.stripe_webhook, name='stripe_webhook'),
     path('inmuebles-rentados/', views.inmuebles_rentados, name='inmuebles_rentados'),
     path('inmueble/<int:inmueble_id>/volver-a-rentar/', views.volver_a_rentar, name='volver_a_rentar'),
+    path('exito/', views.exito_publicacion, name='exito_publicacion'),
      # Ruta para publicar un inmueble
 ]
 

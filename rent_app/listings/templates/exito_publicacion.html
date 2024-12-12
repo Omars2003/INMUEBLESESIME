@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="success-container">
+    <img src="{% static 'images/success.png' %}" alt="Éxito" class="success-icon">
+    <h2>Tu inmueble ha sido publicado con éxito</h2>
+    <a href="{% url 'home' %}" class="return-link">Menu principal</a>
+</div>
+{% endblock %}

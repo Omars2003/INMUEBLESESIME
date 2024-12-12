@@ -63,7 +63,7 @@ class Calificacion(models.Model):
     inmueble = models.ForeignKey(
         'Inmueble', 
         related_name='calificaciones', 
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
     )
     usuario = models.ForeignKey(
         settings.AUTH_USER_MODEL, 

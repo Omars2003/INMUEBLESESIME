@@ -63,6 +63,20 @@ h1 {
     text-decoration: none; /* Sin subrayado */
     font-weight: bold; /* Texto en negrita */
     transition: background-color 0.3s ease, color 0.3s ease;
+    color: #333;
+}
+
+.btn-misinmu{
+    text-decoration: none; /* Sin subrayado */
+    border-color: #000000;
+    color: #000000;
+    background-color: transparent;
+
+}
+
+.btn-misinmu:hover {
+    background-color: transparent;
+    color: rgb(63, 63, 63);
 }
 
 /* Botón Editar */

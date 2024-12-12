@@ -23,6 +23,19 @@ class CustomUserCreationForm(UserCreationForm):
         # Eliminar los textos de ayuda para los campos de contraseña
         self.fields['password1'].help_text = None
         self.fields['password2'].help_text = None
+    def clean_password1(self):
+        password1 = self.cleaned_data.get('password1')
+
+        if len(password1) > 15:
+            raise ValidationError("La contraseña no puede tener más de 15 caracteres.")
+        return password1
+
+    def clean_password2(self):
+        password2 = self.cleaned_data.get('password2')
+
+        if len(password2) > 15:
+            raise ValidationError("La contraseña no puede tener más de 15 caracteres.")
+        return password2
 
 
     def clean_email(self):
@@ -107,7 +120,17 @@ class InmuebleForm(forms.ModelForm):
             'precio': forms.NumberInput(attrs={'class': 'form-control'},),
             'numero_contacto': forms.TextInput(attrs={'class': 'form-control'},),
         }
-       
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.error_messages = {
+                'required': 'Este campo es obligatorio',  # Mensaje personalizado
+                'invalid': 'Introduce un valor válido',  # Opcional: para valores no válidos
+            }
+
+
+        
+        
 
 class AsignarArrendatarioForm(forms.ModelForm):
     arrendatario = forms.ModelChoiceField(queryset=User.objects.all(), required=True, label="Selecciona al arrendatario")

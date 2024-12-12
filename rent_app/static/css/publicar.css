@@ -43,6 +43,7 @@ h1 {
 }
 
 .form-section {
+    
     display: flex;
    gap: 0;
 }
@@ -76,9 +77,20 @@ h1 {
     
 }
 
+.form-control1{
+    width: 95%;
+    background-color: #f12b2b; /* Color de fondo gris */
+    border: 1px solid #ccc;   /* Borde gris */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333; 
+    
+}
+
 .form-control-file {
     height: 500px;
-   
+    background-color: #f0f0f0;
     border: 2px dashed #bbbbbb;
     text-align: center;
     font-size: 16px;

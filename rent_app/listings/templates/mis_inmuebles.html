@@ -9,6 +9,8 @@
 {% block content %}
 <div class="container-inmus">
     <h1 class="title">Tus publicaciones</h1>
+        <p class="pup">Publicacion a editar</p>
+ 
     {% if inmuebles %}
         {% for inmueble in inmuebles %}
             <div class="inmueble">
@@ -57,8 +59,8 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <h2>Eliminar publicación</h2>
-        <p>¿Estás seguro que quieres eliminar este inmueble?</p>
-        <p>Esta acción no se puede desacer</p>
+        <p>¿Esta seguro que desea eliminar la publicacion?</p>
+        <p>Esta no se podrá recuperar</p>
         <div class="modal-buttons">
             <button id="confirmDeleteButton" class="btn-red1">Confirmar</button>
             <button onclick="closeModal()" class="btn-cancel">Cancelar</button>

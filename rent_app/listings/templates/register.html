@@ -10,19 +10,56 @@
 {% block content %}
 <div class="main-content">
     <div class="register-container">
-        <h1>Porfavor ingresa tus datos</h1>
-        
+        <h1>Por favor ingresa tus datos</h1>
+        <p>Todos los campos son obligatorios</p>
+
         {% if messages %}
             <div class="messages-container">
-               {% for message in messages %}
-                  <div class="alert {{ message.tags }}">{{ message }}</div>
-               {% endfor %}
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
             </div>
         {% endif %}
 
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+
+            <!-- Nombre y Apellido -->
+            <div class="form-group">
+                <label for="id_first_name">Nombre y Apellido</label>
+                {{ form.first_name }}
+                {% if form.first_name.errors %}
+                    <span class="error">{{ form.first_name.errors.0 }}</span>
+                {% endif %}
+            </div>
+
+            <!-- Correo Electrónico -->
+            <div class="form-group">
+                <label for="id_email">Correo Electrónico</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <span class="error">{{ form.email.errors.0 }}</span>
+                {% endif %}
+            </div>
+
+            <!-- Contraseña -->
+            <div class="form-group">
+                <label for="id_password1">Contraseña</label>
+                {{ form.password1 }}
+                {% if form.password1.errors %}
+                    <span class="error">{{ form.password1.errors.0 }}</span>
+                {% endif %}
+            </div>
+
+            <!-- Confirmación de Contraseña -->
+            <div class="form-group">
+                <label for="id_password2">Confirmar Contraseña</label>
+                {{ form.password2 }}
+                {% if form.password2.errors %}
+                    <span class="error">{{ form.password2.errors.0 }}</span>
+                {% endif %}
+            </div>
+
             <button type="submit">Crear mi cuenta</button>
         </form>
 

@@ -17,34 +17,49 @@ class Inmueble(models.Model):
         ('10-15 km', '10-15 km'),
         ('15-20 km', '15-20 km'),
     ]
+
     ESTADOS = [
         ('disponible', 'Disponible'),
-        ('rentado', 'Rentado')  # Rentado también cubrirá "reservado"
+        ('rentado', 'Rentado'),  # Rentado también cubrirá "reservado"
     ]
-    estado = models.CharField(max_length=20, choices=ESTADOS, default='disponible')
-    
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='inmuebles')
-    
 
-    
+    # Estado del inmueble: disponible o rentado
+    estado = models.CharField(max_length=20, choices=ESTADOS, default='disponible')
+
+    # Usuario que publica el inmueble
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='inmuebles')
+
+    # Detalles del inmueble
     tipo_inmueble = models.CharField(max_length=50, choices=TIPOS_INMUEBLE)
     distancia = models.CharField(max_length=50, choices=DISTANCIAS)
     direccion = models.CharField(max_length=255)
     codigo_postal = models.CharField(max_length=10)
     descripcion = models.TextField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
-    numero_contacto = numero_contacto = models.CharField(max_length=15)
+    numero_contacto = models.CharField(max_length=15)
+
+    # Calificación del inmueble (promedio)
     calificacion = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
-    arrendador = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name="arrendados")
 
-    arrendatario = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name="alquileres")
-    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    
+    # Relaciones adicionales
+    arrendador = models.ForeignKey(
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.SET_NULL, 
+        null=True, 
+        blank=True, 
+        related_name="arrendados"
+    )  # Usuario que renta el inmueble a otros
 
+    arrendatario = models.ForeignKey(
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.SET_NULL, 
+        null=True, 
+        blank=True, 
+        related_name="alquileres"
+    )  # Usuario que alquila el inmueble
 
     def __str__(self):
         return f"{self.tipo_inmueble} en {self.direccion}"
-
 class Reserva(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     inmueble = models.ForeignKey('Inmueble', on_delete=models.CASCADE)  # Relación con tu modelo de inmueble

@@ -1,8 +1,10 @@
 /* home.css */
+@import url('https://fonts.googleapis.com/css2?family=Family+Sans&display=swap');
+
 
 /* General */
 body {
-    font-family: sans-serif;
+    font-family: 'Family Sans'; /* Asegúrate de especificar una fuente si usas Family Sans */
     background-color: #f9f1e9;
     color: #333;
     margin: 0;
@@ -10,7 +12,7 @@ body {
 
 /* Filtros */
 .filters {
-    font-family: sans-serif;
+    font-family: 'Family Sans'; /* Aplica la fuente a los filtros */
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -23,7 +25,9 @@ body {
     border-radius: 8px;
     font-size: 16px;
     background-color: #ffffff;
+    font-family: 'Family Sans'; /* Asegúrate de que los select también tengan la fuente */
 }
+
 
 /* Listados de Inmuebles */
 .listings {

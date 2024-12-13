@@ -112,22 +112,39 @@ class InmuebleForm(forms.ModelForm):
         model = Inmueble
         fields = ['tipo_inmueble', 'distancia', 'direccion', 'codigo_postal', 'descripcion', 'precio', 'numero_contacto']
         widgets = {
-            'tipo_inmueble': forms.Select(attrs={'class': 'form-control'}),
-            'distancia': forms.Select(attrs={'class': 'form-control'}),
-            'direccion': forms.TextInput(attrs={'class': 'form-control'}),
-            'codigo_postal': forms.TextInput(attrs={'class': 'form-control'}),
-            'descripcion': forms.Textarea(attrs={'class': 'form-control'}),
-            'precio': forms.NumberInput(attrs={'class': 'form-control'},),
-            'numero_contacto': forms.TextInput(attrs={'class': 'form-control'},),
+            'tipo_inmueble': forms.Select(attrs={'class': 'form-control tipo-inmueble'}),
+            'distancia': forms.Select(attrs={'class': 'form-control distancia'}),
+            'direccion': forms.TextInput(attrs={'class': 'form-control direccion'}),
+            'codigo_postal': forms.TextInput(attrs={'class': 'form-control codigo-postal'}),
+            'descripcion': forms.Textarea(attrs={'class': 'form-control descripcion'}),
+            'precio': forms.NumberInput(attrs={'class': 'form-control precio'}),
+            'numero_contacto': forms.TextInput(attrs={'class': 'form-control numero-contacto'}),
+
         }
+    def clean_numero_contacto(self):
+        numero_contacto = self.cleaned_data.get('numero_contacto')
+        if not numero_contacto.isdigit() or len(numero_contacto) != 10:
+            raise ValidationError("El número de contacto debe contener exactamente 10 dígitos.")
+        return numero_contacto
+
+    def clean_codigo_postal(self):
+        codigo_postal = self.cleaned_data.get('codigo_postal')
+        if not codigo_postal.isdigit() or len(codigo_postal) != 5:
+            raise ValidationError("El código postal debe contener exactamente 5 dígitos.")
+        return codigo_postal
+
+    def clean_descripcion(self):
+        descripcion = self.cleaned_data.get('descripcion')
+        if len(descripcion) > 250:
+            raise ValidationError("La descripción no puede tener más de 250 caracteres.")
+        return descripcion
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
-            field.error_messages = {
-                'required': 'Este campo es obligatorio',  # Mensaje personalizado
-                'invalid': 'Introduce un valor válido',  # Opcional: para valores no válidos
-            }
+            field.error_messages = {'required': 'Este campo es obligatorio'}
 
+
+  
 
         
         

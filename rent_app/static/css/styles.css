@@ -1,55 +1,49 @@
 /* styles.css */
+/* Importación de la fuente FREEMAN */
+@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
 
-/* General */
+/* Estilo general para el body */
 body {
-    font-family: 'FREEMAN', sans-serif;
+    font-family: 'Freeman', sans-serif !important;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
     box-sizing: border-box;
-    padding-top: 80px; 
+    padding-top: 80px;
 }
 
-
-
-
-/* Cabecera */
-.header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e0e0e0;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo img {
-    height: 50px;
-}
-
+/* Estilo para el contenedor de navegación */
 .nav {
     display: flex;
     align-items: center;
-    font-family: sans-serif;
+    font-family: 'Freeman', sans-serif; /* Aplica FREEMAN a los elementos de navegación */
 }
 
-.nav .button.publicar-button {
+/* Estilo global para enlaces */
+a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del elemento padre */
+}
+
+/* Estilo general para botones */
+.button {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Freeman', sans-serif; /* Asegúrate de aplicar la fuente */
+}
+
+/* Estilo específico para el botón "Publicar" */
+
+.publicar-button {
     position: relative;
     top: -3px;
     left: 0px;
@@ -62,8 +56,8 @@ body {
     border: 2px solid #ff6600;
     margin-right: 20px;
     transition: background-color 0.3s, color 0.3s;
+    font-family: 'Freeman', sans-serif !important;
 }
-
 .nav .button.publicar-button:hover {
     background-color: #ffffff;
     color: #ff6600;
@@ -79,6 +73,46 @@ body {
 .nav .perfil-icon:hover {
     transform: scale(1.1);
 }
+
+
+
+/* Cabecera */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    font-family: 'FREEMAN', sans-serif;
+    
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+   
+    font-family: 'FREEMAN', sans-serif;
+    
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+
+.logo img {
+    height: 50px;
+}
+
+
 
 /* Margen para que el contenido no quede debajo de la cabecera */
 main {

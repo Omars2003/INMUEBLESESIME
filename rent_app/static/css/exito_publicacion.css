@@ -1,0 +1,29 @@
+.success-container {
+    text-align: center;
+}
+.return-link{
+
+ 
+        position: relative;
+        top: 60px;
+        background-color: transparent;
+        color: #ff6600;
+        padding: 15px 30px;
+        font-size: 13px;
+        font-weight: bold;
+        border: 2px solid #ff6600;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 585px;
+        height: 20px;
+        transition: all 0.3s;
+        text-decoration: none; /* Sin subrayado */
+    
+    
+
+}
+
+.return-link:hover {
+    background-color: #ff6600;
+    color: #ffffff;
+}

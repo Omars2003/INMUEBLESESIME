@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/exito_publicacion.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="success-container">
     <img src="{% static 'images/success.png' %}" alt="Éxito" class="success-icon">

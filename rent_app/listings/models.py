@@ -36,7 +36,7 @@ class Inmueble(models.Model):
     codigo_postal = models.CharField(max_length=10)
     descripcion = models.TextField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
-    numero_contacto = models.CharField(max_length=15)
+    numero_contacto = models.CharField(max_length=10)
 
     # Calificación del inmueble (promedio)
     calificacion = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)

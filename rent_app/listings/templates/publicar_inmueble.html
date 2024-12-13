@@ -11,17 +11,13 @@
     <!-- Bloque para mostrar mensajes de error -->
     {% if messages %}
         <div class="messages">
-            
             {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-            </div>
-        {% endfor %}
-            
+                <div class="message {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
         </div>
     {% endif %}
 
-    <form method="post" enctype="multipart/form-data" id="publicar-inmueble-form">
+    <form method="post" enctype="multipart/form-data" id="publicar-inmueble-form" novalidate>
         {% csrf_token %}
         <div class="form-section">
             <div class="left-column">
@@ -35,48 +31,63 @@
                         style="opacity: 0; position: absolute; width: 100%; height: 100%; cursor: pointer; z-index: 10;" 
                         onchange="handleImageSelection(event)">
                     </div>
+                        <!-- @Gato -->
+                        <!-- 5.3 -->
+                        <label for="numero_contacto">Número de contacto</label>
+                        <input type="number" name="numero_contacto" class="form-control" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10);" >
                     <div class="image-preview" id="image-preview"></div>
                 </div>
             </div>
             <img src="{% static 'images/upload.png' %}" class="image"/>
             <div class="right-column">
                 <div class="form-group">
-                    <label for="numero_contacto">Número de contacto</label>
-                    <input type="number" name="numero_contacto" class="form-control" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10);" >
                 </div>
-                <div class="form-group">
-                    <label for="tipo_inmueble">Selecciona el tipo de inmueble</label>
-                    <select name="tipo_inmueble" class="form-control" required>
-                        <option value="" disabled selected>Tipo</option>
-                        <option value="Departamento">Departamento</option>
-                        <option value="Casa">Casa</option>
-                        <option value="Cuarto">Cuarto</option>
-                    </select>
+                
+                <!-- @Gato -->
+                <!-- 5.7 -->
+                <div class="grid-group">
+                    <div class="form-group">
+                        <label for="tipo_inmueble">Tipo de inmueble</label>
+                        <select name="tipo_inmueble" class="form-control" required>
+                            <option value="" disabled selected>Tipo</option>
+                            <option value="Departamento">Departamento</option>
+                            <option value="Casa">Casa</option>
+                            <option value="Cuarto">Cuarto</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" name="direccion" class="form-control" placeholder="Calle, Colonia, No" required>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="distancia">Selecciona una distancia aproximada</label>
-                    <select name="distancia" class="form-control" required>
-                        <option value="" disabled selected>Selecciona una distancia</option>
-                        <option value="0-5 km">5-10 km</option>
-                        <option value="5-10 km">10-15 km</option>
-                        <option value="10-15 km">15-20 km</option>
-                    </select>
+                <div class="grid-group">
+                    <div class="form-group">
+                        <label for="codigo_postal">Código Postal</label>
+                        <input type="text" name="codigo_postal" class="form-control" required oninput="if(this.value.length > 5) this.value = this.value.slice(0, 5);">
+                    </div>
+                    <!-- @Gato -->
+                    <!-- 5.8 -->
+                    <div class="form-group">
+                        <label for="distancia">Distancia aproximada</label>
+                        <select name="distancia" class="form-control" required>
+                            <option value="" disabled selected>Selecciona una distancia</option>
+                            <option value="0-5 km">5-10 km</option>
+                            <option value="5-10 km">10-15 km</option>
+                            <option value="10-15 km">15-20 km</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="precio">Precio</label>
-                    <input type="number" name="precio" class="form-control" placeholder="MXN" required>
-                </div>
-                <div class="form-group">
-                    <label for="direccion">Dirección</label>
-                    <input type="text" name="direccion" class="form-control" placeholder="Calle, Colonia, No" required>
-                </div>
-                <div class="form-group">
-                    <label for="codigo_postal">Código Postal</label>
-                    <input type="text" name="codigo_postal" class="form-control" required oninput="if(this.value.length > 5) this.value = this.value.slice(0, 5);">
-                </div>
-                <div class="form-group">
-                    <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" class="form-control" rows="5" required oninput="if(this.value.length > 500) this.value = this.value.slice(0, 500);"></textarea>
+                <!-- @Gato -->
+                <!-- 5.9 -->
+                <div class="grid-group">
+                    <div class="form-group">
+                        <label for="precio">Precio</label>
+                        <input type="number" name="precio" class="form-control" placeholder="MXN" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea name="descripcion" class="form-control" rows="5" required oninput="if(this.value.length > 500) this.value = this.value.slice(0, 500);"></textarea>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,13 +139,144 @@
         renderImagePreview(); // Actualizar la vista previa
     }
 
-    document.getElementById('publicar-inmueble-form').onsubmit = function(event) {
-        // Actualizar el input de imágenes con las seleccionadas antes de enviar el formulario
+    // document.getElementById('publicar-inmueble-form').onsubmit = function(event) {
+    //     // Actualizar el input de imágenes con las seleccionadas antes de enviar el formulario
+    //     const dataTransfer = new DataTransfer();
+    //     selectedImages.forEach(file => {
+    //         dataTransfer.items.add(file);
+    //     });
+    //     document.getElementById('imagenes').files = dataTransfer.files;
+    // };
+
+    // @Gato
+    // Added pop-up error handler
+    // Function to show error messages in a popup
+    function showErrorPopup(message) {
+        // Create popup container if it doesn't exist
+        let popup = document.getElementById('error-popup');
+        if (!popup) {
+            popup = document.createElement('div');
+            popup.id = 'error-popup';
+            popup.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background-color: #f44336;
+                color: white;
+                padding: 15px;
+                border-radius: 5px;
+                z-index: 1000;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                max-width: 300px;
+                word-wrap: break-word;
+                display: none;
+            `;
+            document.body.appendChild(popup);
+
+            // Add close button
+            const closeButton = document.createElement('button');
+            closeButton.innerHTML = '&times;';
+            closeButton.style.cssText = `
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 20px;
+                cursor: pointer;
+            `;
+            closeButton.onclick = () => {
+                popup.style.display = 'none';
+            };
+            popup.appendChild(closeButton);
+        }
+
+        // Set message and show popup
+        const messageContainer = popup.querySelector('p') || document.createElement('p');
+        messageContainer.textContent = message;
+        if (!messageContainer.parentNode) {
+            popup.appendChild(messageContainer);
+        }
+
+        popup.style.display = 'block';
+
+        // Automatically hide popup after 5 seconds
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 5000);
+    }
+
+    // Function to validate form before submission
+    function validateForm(event) {
+        const form = event.target;
+        const requiredFields = form.querySelectorAll('[required]');
+        const imageInput = document.getElementById('imagenes');
+
+        // Validate required fields
+        for (let field of requiredFields) {
+            if (!field.value.trim()) {
+                event.preventDefault();
+                showErrorPopup(`Por favor complete el campo: ${field.name || field.id}`);
+                return false;
+            }
+        }
+
+        // Validate image count
+        if (selectedImages.length < 7 || selectedImages.length > 15) {
+            event.preventDefault();
+            showErrorPopup(`Debes subir entre 7 y 15 fotos. Actualmente tienes ${selectedImages.length} foto(s).`);
+            return false;
+        }
+
+        // Store form data in localStorage before submission
+        const formData = new FormData(form);
+        for (let [key, value] of formData.entries()) {
+            if (key !== 'imagenes') {
+                localStorage.setItem(`form_${key}`, value);
+            }
+        }
+
+        // Store image count
+        localStorage.setItem('form_image_count', selectedImages.length);
+
+        // Update the file input with selected images
         const dataTransfer = new DataTransfer();
         selectedImages.forEach(file => {
             dataTransfer.items.add(file);
         });
-        document.getElementById('imagenes').files = dataTransfer.files;
-    };
+        imageInput.files = dataTransfer.files;
+
+        return true;
+    }
+
+    // Restore form data on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('publicar-inmueble-form');
+        const requiredFields = form.querySelectorAll('[required]');
+
+        // Restore input values
+        requiredFields.forEach(field => {
+            const savedValue = localStorage.getItem(`form_${field.name}`);
+            if (savedValue) {
+                field.value = savedValue;
+            }
+        });
+
+        // Restore image count preview
+        const savedImageCount = localStorage.getItem('form_image_count');
+        if (savedImageCount) {
+            showErrorPopup(`Recuperando formulario anterior. Imágenes previas: ${savedImageCount}`);
+        }
+
+        // Clear localStorage after restoring (optional, can be removed if you want to keep data)
+        localStorage.removeItem('form_image_count');
+        requiredFields.forEach(field => {
+            localStorage.removeItem(`form_${field.name}`);
+        });
+
+        // Attach form validation to submit event
+        form.addEventListener('submit', validateForm);
+    });
 </script>
 {% endblock %}

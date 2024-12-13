@@ -2,19 +2,18 @@
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    margin: 20;
+    padding: 20;
+    background-color: #f4f4f4;
+    min-height: 20em;
 }
 
 .editar-inmueble-container {
     background: #ffffff;
-    width: 1600px;
-    height: auto;
+    max-width: 1600px;
+    height: 950px;
 
     margin: 0px auto;
     padding: 50px;
@@ -22,13 +21,14 @@ body {
     border-radius: 8px;
 }
 
+
 .image{
     background-image: none;
         position:relative;
         height:200px;
         width:200px;
-        top: 440px;
-        left : -460px;
+        top: 140px;
+        left : -470px;
         z-index: 0;
       }
         
@@ -63,18 +63,196 @@ h1 {
  
 }
 
-.form-control{
-    width: 95%;
+.form-control {
+    display: block;
+    width: 100%;
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+
+.numero_contacto {
+  
+    display: block;
+    width: 50%;
+    height: 30px;
+    padding: 10px;
+    font-size: 14px;
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+}
+
+/* Campo tipo de inmueble */
+.tipo_inmueble {
+    position: relative;
+    left: -160px;
+    top: 40px;
+    display: block;
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+    font-size: 11px;
+    color: #495057;
+    background-color: #ffffff;
+    border: 0.5px solid #474747;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+}
+
+.tipo_inmueble_texto {
+    position: relative;
+    left: -160px;
+    top: 40px;
+    width: 200px;
+  
+}
+
+.tipo_inmueble:hover {
+    background-color: #f5f5f5;
+  
+}
+
+/* Campo distancia */
+.distancia1 {
+    position: relative;
+    left: -160px;
+    top: 80px;
+    display: block;
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+    font-size: 10px;
+    color: #495057;
+    background-color: #ffffff;
+    border: 0.5px solid #474747;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.distancia_texto{
+
+    position: relative;
+    left: -160px;
+    top: 70px;
+    width: 200px;
+  
+
+}
+
+.distancia1:hover {
+    background-color: #f5f5f5;
+  
+}
+
+
+/* Campo precio */
+.precio {
+    position: relative;
+    top: 100px;
+    left: -160px;
+    display: block;
+    width: 175px;
+    height: 30px;
+    padding: 10px;
+    font-size: 14px;
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+}
+
+.precio_texto{
+
+    position: relative;
+    top: 100px;
+    left: -160px;
+   
+}
+
+/* Campo dirección */
+.direccion {
+    position: relative;
+    top: -330px;
+    left: 110px;
+    display: block;
+    width: 80%;
+    height: 30px;
+    padding: 10px;
+    font-size: 14px;
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+}
+
+.direccion_texto {
+    position: relative;
+    top: -330px;
+    left: 110px;
+    position: relative;
+}
+
+/* Campo código postal */
+.codigo_postal {
+    position: relative;
+    top: -290px;
+    left: 110px;
+    display: block;
+    width: 80%;
+    height: 30px;
+    padding: 10px;
+    font-size: 14px;
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+}
+
+.codigo_texto {
+    position: relative;
+    top: -290px;
+    left: 110px;
+   
+}
+
+/* Campo descripción */
+.descripcion {
+    position: relative;
+    top: -260px;
+    left: 110px;
+    display: block;
+    width: 80%;
+    height: 240px;
+    padding: 10px;
+    font-size: 14px;
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+}
+
+.descripcion_texto {
+    position: relative;
+    top: -260px;
+    left: 110px;
+    position: relative;
 }
 
 .form-control-file {
     height: 500px;
-   
-    border: 2px dashed #bbbbbb;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
     text-align: center;
     font-size: 16px;
     color: #555555;
@@ -82,6 +260,7 @@ h1 {
     align-items: center;
     justify-content: center;
     position: relative;
+    border-radius: 20px;
     
 }
 
@@ -139,8 +318,8 @@ h1 {
 
 .submit-button button {
     position: relative;
-    top: -150px;   /* Empuja hacia abajo desde su posición original */
-    left: 455px;
+    top: -300px;   /* Empuja hacia abajo desde su posición original */
+    left: 512px;
     background-color: #ffffff;
     color: #0066cc;
     padding: 15px 30px;
@@ -149,11 +328,18 @@ h1 {
     border: 2px solid #0066cc;
     border-radius: 8px;
     cursor: pointer;
-    width: 667px;
+    width: 570px;
     transition: all 0.3s;
 }
 
 .submit-button button:hover {
     background-color: #0066cc;
     color: #ffffff;
+
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
 }

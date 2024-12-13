@@ -12,6 +12,19 @@
         <div class="form-section">
             <div class="left-column">
                 <div class="form-group">
+                    <div class="form-control-file">
+                        <input type="file" id="imagenes" name="imagenes" multiple style="opacity: 0; position: absolute; width: 100%; height: 100%; cursor: pointer;z-index: 10;" onchange="previewImages(event)">
+                    </div>
+                    <div class="image-preview" id="new-image-preview"></div>
+                </div>
+                <div class="form-group">
+                    <label for="numero_contacto">Número de contacto</label>
+                    <input type="number" name="numero_contacto" class="numero_contacto" oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10);" >
+                    {% if form.numero_contacto.errors %}
+                        <div class="error-message">{{ form.numero_contacto.errors|striptags }}</div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
                     <label for="imagenes">Imágenes actuales</label>
                     <div class="image-preview" id="current-image-preview">
                         {% for imagen in inmueble.imagenes.all %}
@@ -20,52 +33,46 @@
                                 <button type="button" class="remove-image" onclick="removeImage({{ imagen.id }})">&times;</button>
                             </div>
                         {% endfor %}
+                        
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-control-file">
-                        <input type="file" id="imagenes" name="imagenes" multiple style="opacity: 0; position: absolute; width: 100%; height: 100%; cursor: pointer;z-index: 10;" onchange="previewImages(event)">
-                    </div>
-                    <div class="image-preview" id="new-image-preview"></div>
                 </div>
             </div>
             <img src="{% static 'images/upload.png' %}" class="image"/>
+            
             <div class="right-column">
                 <div class="form-group">
-                    <label for="numero_contacto">Número de contacto</label>
-                    <input type="text" name="numero_contacto" class="form-control" value="{{ inmueble.numero_contacto }}" required>
-                </div>
-                <div class="form-group">
-                    <label for="tipo_inmueble">Selecciona el tipo de inmueble</label>
-                    <select name="tipo_inmueble" class="form-control" required>
-                        <option value="Departamento" {% if inmueble.tipo_inmueble == 'Departamento' %}selected{% endif %}>Departamento</option>
-                        <option value="Casa" {% if inmueble.tipo_inmueble == 'Casa' %}selected{% endif %}>Casa</option>
-                        <option value="Cuarto" {% if inmueble.tipo_inmueble == 'Cuarto' %}selected{% endif %}>Cuarto</option>
+                    <label for="tipo_inmueble" class="tipo_inmueble_texto">Selecciona el tipo de inmueble</label>
+                    <select name="tipo_inmueble" class="tipo_inmueble" required>
+                        <option value="" disabled selected>Tipo</option>
+                        <option value="Departamento">Departamento</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Cuarto">Cuarto</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="distancia">Selecciona una distancia aproximada</label>
-                    <select name="distancia" class="form-control" required>
-                        <option value="0-5 km" {% if inmueble.distancia == '0-5 km' %}selected{% endif %}>0-5 km</option>
-                        <option value="5-10 km" {% if inmueble.distancia == '5-10 km' %}selected{% endif %}>5-10 km</option>
-                        <option value="10-15 km" {% if inmueble.distancia == '10-15 km' %}selected{% endif %}>10-15 km</option>
+                    <label for="distancia" class="distancia_texto">Selecciona una distancia aproximada</label>
+                    <select name="distancia" class="distancia1" required>
+                        <option value="" disabled selected>Distancia</option>
+                        <option value="0-5 km">5-10 km</option>
+                        <option value="5-10 km">10-15 km</option>
+                        <option value="10-15 km">15-20 km</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="precio">Precio</label>
-                    <input type="number" name="precio" class="form-control" placeholder="MXN" value="{{ inmueble.precio }}" required>
+                    <label for="precio" class="precio_texto">Precio</label>
+                    <input type="number" name="precio" class="precio" placeholder="MXN" required>
                 </div>
                 <div class="form-group">
-                    <label for="direccion">Dirección</label>
-                    <input type="text" name="direccion" class="form-control" placeholder="Calle, Colonia, No" value="{{ inmueble.direccion }}" required>
+                    <label for="direccion" class="direccion_texto">Dirección</label>
+                    <input type="text" name="direccion" class="direccion" placeholder="Calle, Colonia, No" required>
                 </div>
                 <div class="form-group">
-                    <label for="codigo_postal">Código Postal</label>
-                    <input type="text" name="codigo_postal" class="form-control" value="{{ inmueble.codigo_postal }}" required>
+                    <label for="codigo_postal" class="codigo_texto">Código Postal</label>
+                    <input type="text" name="codigo_postal" class="codigo_postal" required oninput="if(this.value.length > 5) this.value = this.value.slice(0, 5);">
                 </div>
                 <div class="form-group">
-                    <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" class="form-control" rows="5" required>{{ inmueble.descripcion }}</textarea>
+                    <label for="descripcion" class="descripcion_texto">Descripción</label>
+                    <textarea name="descripcion" class="descripcion" rows="5" required oninput="if(this.value.length > 500) this.value = this.value.slice(0, 500);"></textarea>
                 </div>
             </div>
         </div>

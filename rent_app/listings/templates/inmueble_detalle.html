@@ -54,6 +54,7 @@
             <div class="modal-co">
                 <span class="close" id="closeModal">&times;</span>
                 <h2>Comentarios</h2>
+                <div class="linea-separadora"></div>
                 <div class="comentarios-contenedor">
                     {% for comentario in comentarios %}
                         <div class="comentario-item">
@@ -68,7 +69,7 @@
                             </div>
                             <strong>{{ comentario.usuario.first_name }} {{ comentario.usuario.last_name }}</strong> - {{ comentario.fecha_creacion|date:"d M Y" }}
                             {% if comentario.verificado %}
-                                <span style="color: #28a745;">✔ Verificado</span>
+                                <span style="color: #28a745;">✔ </span>
                             {% endif %}
                             <p>{{ comentario.comentario }}</p>
                         </div>

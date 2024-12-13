@@ -4,6 +4,8 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Sans&display=swap" rel="stylesheet">
+
 {% endblock %}
 
 {% block content %}
@@ -27,21 +29,21 @@
         <!-- Filtros -->
         <form method="get" action=".">
             <select name="tipo" onchange="this.form.submit()">
-                <option value="">Tipo</option>
+                <option value="" style="font-family: 'Sans', sans-serif;">Tipo</option>
                 <option value="Departamento" {% if request.GET.tipo == "Departamento" %}selected{% endif %}>Departamento</option>
                 <option value="Casa" {% if request.GET.tipo == "Casa" %}selected{% endif %}>Casa</option>
                 <option value="Cuarto" {% if request.GET.tipo == "Cuarto" %}selected{% endif %}>Cuarto</option>
             </select>
 
             <select name="costo" onchange="this.form.submit()">
-                <option value="">Costo</option>
+                <option value="" style="font-family: 'Sans', sans-serif;">Costo</option>
                 <option value="1000-3000" {% if request.GET.costo == "1000-3000" %}selected{% endif %}>1,000 - 3,000</option>
                 <option value="3000-5000" {% if request.GET.costo == "3000-5000" %}selected{% endif %}>3,000 - 5,000</option>
                 <option value="5000-10000" {% if request.GET.costo == "5000-10000" %}selected{% endif %}>5,000 - 10,000</option>
             </select>
 
             <select name="distancia" onchange="this.form.submit()">
-                <option value="">Distancia</option>
+                <option value="" style="font-family: 'Sans', sans-serif;">Distancia</option>
                 <option value="0-5 km" {% if request.GET.distancia == "0-5 km" %}selected{% endif %}>0 km - 5 km</option>
                 <option value="5-10 km" {% if request.GET.distancia == "5-10 km" %}selected{% endif %}>5 km - 10 km</option>
                 <option value="10-15 km" {% if request.GET.distancia == "10-15 km" %}selected{% endif %}>10 km - 15 km</option>

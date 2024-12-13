@@ -280,11 +280,11 @@ def publicar_inmueble(request):
 
             except Exception as e:
                 print("Error al guardar el inmueble:", str(e))
-                messages.error(request, "Hubo un error al publicar el inmueble. Inténtalo de nuevo.")
+                
         else:
             # Imprime los errores del formulario si no es válido
             print("Errores del formulario:", inmueble_form.errors)
-            messages.error(request, "Hubo un error en el formulario. Revisa la información e inténtalo de nuevo.")
+            
 
     else:
         inmueble_form = InmuebleForm()
@@ -393,7 +393,8 @@ def crear_sesion_pago(request):
         # Verificar si el inmueble ya está reservado por alguien más
         if Reserva.objects.filter(inmueble=inmueble, estado_pago=False).exists():
             # Si existe una reserva activa, no permitimos crear una nueva
-            return JsonResponse({'error': 'Este inmueble ya está reservado por otro usuario.'}, status=400)
+            return render(request, 'inmueble_ya_rentado.html', {
+            'mensaje': 'Este inmueble ya ha sido rentado.'})
 
         # Crear la reserva con estado_pago = False antes del pago
         try:

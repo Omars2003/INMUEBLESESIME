@@ -241,8 +241,6 @@ body {
 
 
 
-
-
 /* Botón de Ver Comentarios */
 #btnComentarios {
     position: relative;
@@ -335,4 +333,14 @@ body {
     background-color: #ffffff;
     color: #007bff;
   
+}
+
+
+
+.linea-separadora {
+    width: 100%; /* O ajusta el ancho según lo necesites */
+    height: 2px; /* Grosor de la línea */
+    background-color: #000000; /* Color de la línea */
+    margin: 10px 0; /* Espaciado hacia arriba y abajo */
+    border-radius: 1px; /* Opcional: redondea los bordes */
 }

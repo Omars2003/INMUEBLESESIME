@@ -43,7 +43,6 @@ h1 {
 }
 
 .form-section {
-    
     display: flex;
    gap: 0;
 }
@@ -66,21 +65,32 @@ h1 {
  
 }
 
-.form-control{
-    width: 95%;
-    background-color: #f0f0f0; /* Color de fondo gris */
-    border: 1px solid #ccc;   /* Borde gris */
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #333; 
-    
+/* @Gato
+5.7 
+5.8
+5.9*/
+.form-group input [type="number"] {
+    height: auto;
+    max-width: 20 px;
+
+}
+.form-group input [type="text"] {
+    height: auto;
+    width: auto;
 }
 
-.form-control1{
+.grid-group {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-control{
     width: 95%;
-    background-color: #f12b2b; /* Color de fondo gris */
-    border: 1px solid #ccc;   /* Borde gris */
+    /* @Gato
+    5.4 */
+    background-color: #ffffff; /* Color de blanco */
+    border: 1px solid #000000;   /* Borde negro*/
     padding: 10px;
     border-radius: 5px;
     font-size: 14px;
@@ -90,16 +100,22 @@ h1 {
 
 .form-control-file {
     height: 500px;
-    background-color: #f0f0f0;
     border: 2px dashed #bbbbbb;
     text-align: center;
     font-size: 16px;
-    color: #555555;
+    /* @Gato 
+    5.2*/
+    background-color: #7a7a7a;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    
+    position: relative;   
+}
+
+/* @Gato
+ 5.2*/
+.form-control-file input[type="file" i] {
+    background-color: #7a7a7a;
 }
 
 .form-control-file::before {
@@ -156,6 +172,7 @@ h1 {
     position: relative;
     top: -200px;   /* Empuja hacia abajo desde su posición original */
     left: 0px;
+    font-family: Freeman;
     text-align: center;
     margin-top: 30px;
 }
@@ -180,4 +197,20 @@ h1 {
     background-color: #0066cc;
     color: #ffffff;
 }
+}
+/* @Gato
+Pop-up error handler styles */
+#error-popup {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

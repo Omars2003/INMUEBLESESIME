@@ -255,7 +255,7 @@ def publicar_inmueble(request):
             # Valida el número de imágenes antes de guardar el inmueble
             imagenes = request.FILES.getlist('imagenes')
             if len(imagenes) < 7 or len(imagenes) > 15:
-                messages.error(request, "Debes subir entre 7 y 15 imágenes.")
+                messages.error(request, "Este campo es obligatorio, debes subir entre 7 y 15 imágenes.")
                 return render(request, 'publicar_inmueble.html', {'inmueble_form': inmueble_form})
 
             # Guarda el inmueble
@@ -275,7 +275,7 @@ def publicar_inmueble(request):
                         messages.error(request, "Hubo un error al guardar la imagen. Inténtalo de nuevo.")
                         return render(request, 'publicar_inmueble.html', {'inmueble_form': inmueble_form})
 
-                messages.success(request, "Inmueble publicado exitosamente.")
+                
                 return redirect('exito_publicacion')
 
             except Exception as e:

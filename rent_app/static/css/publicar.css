@@ -85,17 +85,189 @@ h1 {
     grid-template-columns: 1fr 1fr;
 }
 
-.form-control{
-    width: 95%;
-    /* @Gato
-    5.4 */
-    background-color: #ffffff; /* Color de blanco */
-    border: 1px solid #000000;   /* Borde negro*/
+.form-control {
+    display: block;
+    width: 100%;
     padding: 10px;
-    border-radius: 5px;
     font-size: 14px;
-    color: #333; 
-    
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+
+.numero_contacto {
+  
+    display: block;
+    width: 50%;
+    height: 30px;
+    padding: 10px;
+    font-size: 14px;
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+}
+
+.tipo_inmueble {
+    position: relative;
+    left: -160px;
+    top: 40px;
+    display: block;
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+    font-size: 11px;
+    color: #495057;
+    background-color: #ffffff;
+    border: 0.5px solid #474747;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+}
+
+.tipo_inmueble_texto {
+    position: relative;
+    left: -160px;
+    top: 40px;
+    width: 200px;
+  
+}
+
+.tipo_inmueble:hover {
+    background-color: #f5f5f5;
+  
+}
+
+/* Campo distancia */
+.distancia1 {
+    position: relative;
+    left: -160px;
+    top: 80px;
+    display: block;
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+    font-size: 10px;
+    color: #495057;
+    background-color: #ffffff;
+    border: 0.5px solid #474747;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.distancia_texto{
+
+    position: relative;
+    left: -160px;
+    top: 70px;
+    width: 200px;
+  
+
+}
+
+.distancia1:hover {
+    background-color: #f5f5f5;
+  
+}
+
+
+/* Campo precio */
+.precio {
+    position: relative;
+    top: 100px;
+    left: -160px;
+    display: block;
+    width: 175px;
+    height: 30px;
+    padding: 10px;
+    font-size: 14px;
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+}
+
+.precio_texto{
+
+    position: relative;
+    top: 100px;
+    left: -160px;
+   
+}
+
+/* Campo dirección */
+.direccion {
+    position: relative;
+    top: -330px;
+    left: 110px;
+    display: block;
+    width: 80%;
+    height: 30px;
+    padding: 10px;
+    font-size: 14px;
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+}
+
+.direccion_texto {
+    position: relative;
+    top: -330px;
+    left: 110px;
+    position: relative;
+}
+
+/* Campo código postal */
+.codigo_postal {
+    position: relative;
+    top: -290px;
+    left: 110px;
+    display: block;
+    width: 80%;
+    height: 30px;
+    padding: 10px;
+    font-size: 14px;
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+}
+
+.codigo_texto {
+    position: relative;
+    top: -290px;
+    left: 110px;
+   
+}
+
+/* Campo descripción */
+.descripcion {
+    position: relative;
+    top: -260px;
+    left: 110px;
+    display: block;
+    width: 80%;
+    height: 240px;
+    padding: 10px;
+    font-size: 14px;
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+}
+
+.descripcion_texto {
+    position: relative;
+    top: -260px;
+    left: 110px;
+    position: relative;
 }
 
 .form-control-file {
@@ -105,7 +277,7 @@ h1 {
     font-size: 16px;
     /* @Gato 
     5.2*/
-    background-color: #7a7a7a;
+    background-color: #f8f9fa;
     display: flex;
     align-items: center;
     justify-content: center;

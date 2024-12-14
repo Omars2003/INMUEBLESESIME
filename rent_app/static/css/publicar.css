@@ -27,7 +27,7 @@ body {
         height:200px;
         width:200px;
         top: 140px;
-        left : -460px;
+        left : -450px;
         z-index: 0;
       }
         
@@ -113,7 +113,7 @@ h1 {
 .tipo_inmueble {
     position: relative;
     left: -160px;
-    top: 40px;
+    top: 0px;
     display: block;
     width: 200px;
     height: 60px;
@@ -132,7 +132,7 @@ h1 {
 .tipo_inmueble_texto {
     position: relative;
     left: -160px;
-    top: 40px;
+    top: 0px;
     width: 200px;
   
 }
@@ -142,11 +142,18 @@ h1 {
   
 }
 
+.error-message1{
+    position: relative;
+    left: -160px;
+    top: 5px;
+    color: #e00000;
+}
+
 /* Campo distancia */
 .distancia1 {
     position: relative;
-    left: -160px;
-    top: 80px;
+    left: -516px;
+    top: 40px;
     display: block;
     width: 200px;
     height: 60px;
@@ -164,8 +171,8 @@ h1 {
 .distancia_texto{
 
     position: relative;
-    left: -160px;
-    top: 70px;
+    left: -516px;
+    top: 40px;
     width: 200px;
   
 
@@ -176,11 +183,20 @@ h1 {
   
 }
 
+.error-message-dis{
+
+    position: relative;
+    left: -516px;
+    top: 45px;
+    color: #e00000;
+
+}
+
 
 /* Campo precio */
 .precio {
     position: relative;
-    top: 100px;
+    top: 75px;
     left: -160px;
     display: block;
     width: 175px;
@@ -196,18 +212,27 @@ h1 {
 .precio_texto{
 
     position: relative;
-    top: 100px;
+    top: 75px;
     left: -160px;
    
+}
+
+.error-message-precio{
+
+    position: relative;
+    top: 80px;
+    left: -160px;
+    color: #e00000;
+
 }
 
 /* Campo dirección */
 .direccion {
     position: relative;
-    top: -330px;
-    left: 110px;
+    top: 3px;
+    left: -230px;
     display: block;
-    width: 80%;
+    width: 160%;
     height: 30px;
     padding: 10px;
     font-size: 14px;
@@ -219,18 +244,27 @@ h1 {
 
 .direccion_texto {
     position: relative;
-    top: -330px;
-    left: 110px;
+    top: 3px;
+    left: -230px;
     position: relative;
+}
+
+.error-message-dir{
+
+    position: relative;
+    top: 10px;
+    left: -230px;
+    color: #e00000;
+
 }
 
 /* Campo código postal */
 .codigo_postal {
     position: relative;
-    top: -290px;
-    left: 110px;
+    top: 10px;
+    left: 130px;
     display: block;
-    width: 80%;
+    width: 160%;
     height: 30px;
     padding: 10px;
     font-size: 14px;
@@ -242,19 +276,28 @@ h1 {
 
 .codigo_texto {
     position: relative;
-    top: -290px;
-    left: 110px;
+    top: 10px;
+    left: 130px;
    
+}
+
+.error-message-codigo{
+
+    position: relative;
+    top: 15px;
+    left: 130px;
+    color: #e00000;
+
 }
 
 /* Campo descripción */
 .descripcion {
     position: relative;
-    top: -260px;
-    left: 110px;
+    top: 0px;
+    left: -230px;
     display: block;
-    width: 80%;
-    height: 240px;
+    width: 160%;
+    height: 220px;
     padding: 10px;
     font-size: 14px;
     color: #495057;
@@ -265,23 +308,32 @@ h1 {
 
 .descripcion_texto {
     position: relative;
-    top: -260px;
-    left: 110px;
+    top: 0px;
+    left: -230px;
     position: relative;
+}
+
+.error-message-desc{
+
+    position: relative;
+    top: 5px;
+    left: -230px;
+    color: #e00000;
+
 }
 
 .form-control-file {
     height: 500px;
-    border: 2px dashed #bbbbbb;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
     text-align: center;
     font-size: 16px;
-    /* @Gato 
-    5.2*/
-    background-color: #f8f9fa;
+    color: #555555;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;   
+    position: relative;
+    border-radius: 20px;
 }
 
 /* @Gato
@@ -352,7 +404,7 @@ h1 {
 .submit-button button {
     position: relative;
     top: 180px;   /* Empuja hacia abajo desde su posición original */
-    left: 444px;
+    left: 510px;
     background-color: #ffffff;
     color: #0066cc;
     padding: 15px 30px;
@@ -361,7 +413,7 @@ h1 {
     border: 2px solid #0066cc;
     border-radius: 8px;
     cursor: pointer;
-    width: 687px;
+    width: 570px;
     transition: all 0.3s;
 }
 

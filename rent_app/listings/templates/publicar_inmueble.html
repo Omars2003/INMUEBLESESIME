@@ -54,7 +54,7 @@
         <div class="form-group"></div>
         <div class="grid-group">
             <div class="form-group">
-                <label for="tipo_inmueble" class="tipo_inmueble_texto">Tipo de inmueble</label>
+                <label for="tipo_inmueble" class="tipo_inmueble_texto">Selecciona el tipo de inmueble</label>
                 <select name="tipo_inmueble" class="tipo_inmueble">
                     <option value="" disabled {% if not inmueble_form.tipo_inmueble.value %}selected{% endif %}>Tipo</option>
                     <option value="Departamento">Departamento</option>
@@ -62,55 +62,55 @@
                     <option value="Cuarto">Cuarto</option>
                 </select>
                 {% if inmueble_form.tipo_inmueble.errors %}
-                    <div class="error-message">{{ inmueble_form.tipo_inmueble.errors.0 }}</div>
+                    <div class="error-message1">{{ inmueble_form.tipo_inmueble.errors.0 }}</div>
                 {% endif %}
             </div>
             <div class="form-group">
                 <label for="direccion" class="direccion_texto">Dirección</label>
                 <input type="text" name="direccion" class="direccion" placeholder="Calle, Colonia, No" value="{{ inmueble_form.direccion.value|default:'' }}">
                 {% if inmueble_form.direccion.errors %}
-                    <div class="error-message">{{ inmueble_form.direccion.errors.0 }}</div>
+                    <div class="error-message-dir">{{ inmueble_form.direccion.errors.0 }}</div>
                 {% endif %}
             </div>
         </div>
         <div class="grid-group">
             <div class="form-group">
-                <label for="codigo_postal">Código Postal</label>
-                <input type="text" name="codigo_postal" class="form-control" 
+                <label for="codigo_postal" class="codigo_texto">Código Postal</label>
+                <input type="text" name="codigo_postal" class="codigo_postal" 
                 oninput="if(this.value.length > 5) this.value = this.value.slice(0, 5);" 
                 value="{{ inmueble_form.codigo_postal.value|default:'' }}">
                 {% if inmueble_form.codigo_postal.errors %}
-                    <div class="error-message">{{ inmueble_form.codigo_postal.errors.0 }}</div>
+                    <div class="error-message-codigo">{{ inmueble_form.codigo_postal.errors.0 }}</div>
                 {% endif %}
             </div>
             <div class="form-group">
-                <label for="distancia">Distancia aproximada</label>
-                <select name="distancia" class="form-control">
+                <label for="distancia" class="distancia_texto">Selecciona una distancia aproximada</label>
+                <select name="distancia" class="distancia1">
                     <option value="" disabled {% if not inmueble_form.distancia.value %}selected{% endif %}>Distancia</option>
                     <option value="0-5 km">0-5 km</option>
                     <option value="5-10 km">5-10 km</option>
                     <option value="10-15 km">10-15 km</option>
                 </select>
                 {% if inmueble_form.distancia.errors %}
-                    <div class="error-message">{{ inmueble_form.distancia.errors.0 }}</div>
+                    <div class="error-message-dis">{{ inmueble_form.distancia.errors.0 }}</div>
                 {% endif %}
             </div>
         </div>
         <div class="grid-group">
             <div class="form-group">
-                <label for="precio">Precio</label>
-                <input type="number" name="precio" class="form-control" placeholder="MXN" value="{{ inmueble_form.precio.value|default:'' }}">
+                <label for="precio" class="precio_texto">Precio</label>
+                <input type="number" name="precio" class="precio placeholder="MXN" value="{{ inmueble_form.precio.value|default:'' }}">
                 {% if inmueble_form.precio.errors %}
-                    <div class="error-message">{{ inmueble_form.precio.errors.0 }}</div>
+                    <div class="error-message-precio">{{ inmueble_form.precio.errors.0 }}</div>
                 {% endif %}
             </div>
             <div class="form-group">
-                <label for="descripcion">Descripción</label>
+                <label for="descripcion" class="descripcion_texto">Descripción</label>
                 
-                <textarea name="descripcion" class="form-control" rows="5">{{ inmueble_form.descripcion.value|default:'' }}</textarea>
+                <textarea name="descripcion" class="descripcion" rows="5">{{ inmueble_form.descripcion.value|default:'' }}</textarea>
 
                 {% if inmueble_form.descripcion.errors %}
-                    <div class="error-message">{{ inmueble_form.descripcion.errors.0 }}</div>
+                    <div class="error-message-desc">{{ inmueble_form.descripcion.errors.0 }}</div>
                 {% endif %}
             </div>
         </div>

@@ -1,7 +1,7 @@
 /* detalle_inmueble.css */
 
 body {
-    font-family: Arial, sans-serif;
+
     margin: 0;
     padding: 0;
     background-color: #f9f1e9;
@@ -181,6 +181,7 @@ body {
 /* Botones generales */
 .buttons a,
 .buttons button {
+    font-family: sans-serif;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
@@ -193,6 +194,7 @@ body {
 
 /* Botón de WhatsApp */
 .whatsapp {
+    font-family: sans-serif;
     position: relative;
     top: -122px;   /* Empuja hacia abajo desde su posición original */
     left: 0px;
@@ -243,6 +245,7 @@ body {
 
 /* Botón de Ver Comentarios */
 #btnComentarios {
+    font-family: sans-serif;
     position: relative;
     top: -176px;   /* Empuja hacia abajo desde su posición original */
     left: 270px;

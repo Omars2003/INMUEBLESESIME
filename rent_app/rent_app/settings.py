@@ -25,6 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-*81!_no_(+rjbeg$i&ys-drc@i+cp8ij5-64ida3lo48@t-cut"
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db' 
 SESSION_COOKIE_SECURE = True  # Requiere HTTPS para las cookies de sesión
 CSRF_COOKIE_SECURE = True     # Requiere HTTPS para las cookies CSRF
 SESSION_COOKIE_AGE = 7200     # Duración de la sesión (2 horas)

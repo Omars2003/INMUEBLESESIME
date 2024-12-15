@@ -31,7 +31,7 @@ SESSION_COOKIE_AGE = 7200     # Duración de la sesión (2 horas)
 SESSION_SAVE_EVERY_REQUEST = True  # Renueva la sesión con cada solicitud
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',

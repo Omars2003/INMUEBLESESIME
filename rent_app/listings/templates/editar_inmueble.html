@@ -60,7 +60,7 @@
                 <div class="form-group">
                     <label for="distancia" class="distancia_texto">Selecciona una distancia aproximada</label>
                     <select name="distancia" class="distancia1" required>
-                        <option value="0-5 km" {% if inmueble.distancia == '0-5 km' %} selected {% endif %}>0-5 km</option>
+                        
                         <option value="5-10 km" {% if inmueble.distancia == '5-10 km' %} selected {% endif %}>5-10 km</option>
                         <option value="10-15 km" {% if inmueble.distancia == '10-15 km' %} selected {% endif %}>10-15 km</option>
                         <option value="15-20 km" {% if inmueble.distancia == '15-20 km' %} selected {% endif %}>15-20 km</option>
@@ -70,7 +70,7 @@
                 <!-- Campo para Precio -->
                 <div class="form-group">
                     <label for="precio" class="precio_texto">Precio</label>
-                    <input type="number" name="precio" class="precio" placeholder="MXN" value="{{ inmueble_form.instance.precio }}" step="0.01" required>
+                    <input type="number" name="precio" class="precio" placeholder="MXN" value="{{ inmueble.precio }}" step="0.01" required>
                 </div>
 
                 <!-- Campo para Dirección -->

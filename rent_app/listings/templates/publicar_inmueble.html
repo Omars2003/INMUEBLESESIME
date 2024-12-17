@@ -33,9 +33,13 @@
             </div>
             
             <div class="image-preview" id="image-preview"></div>
-            {% if inmueble_form.imagenes.errors %}
-                <div class="error-message">{{ inmueble_form.imagenes.errors.0 }}</div>
+            {% if inmueble_form.non_field_errors %}
+            <div class="error-message" style="color: red; margin-top: 10px; font-weight: bold;">
+                {{ inmueble_form.non_field_errors.0 }}
+            </div>
             {% endif %}
+
+           
         </div>
         <label for="numero_contacto">Número de contacto</label>
         <input type="number" name="numero_contacto" class="numero_contacto" 
@@ -87,7 +91,7 @@
                 <label for="distancia" class="distancia_texto">Selecciona una distancia aproximada</label>
                 <select name="distancia" class="distancia1">
                     <option value="" disabled {% if not inmueble_form.distancia.value %}selected{% endif %}>Distancia</option>
-                    <option value="0-5 km">0-5 km</option>
+                    
                     <option value="5-10 km">5-10 km</option>
                     <option value="10-15 km">10-15 km</option>
                     <option value="15-20 km">15-20 km</option>

@@ -110,6 +110,13 @@ h1 {
     border-radius: 10px;
 }
 
+.error-message-numero{
+    font-size: 14px;
+    color: #e00000;
+}
+
+
+
 .tipo_inmueble {
     position: relative;
     left: -160px;
@@ -143,6 +150,7 @@ h1 {
 }
 
 .error-message1{
+    font-size: 14px;
     position: relative;
     left: -160px;
     top: 5px;
@@ -184,7 +192,7 @@ h1 {
 }
 
 .error-message-dis{
-
+    font-size: 14px;
     position: relative;
     left: -516px;
     top: 45px;
@@ -218,7 +226,7 @@ h1 {
 }
 
 .error-message-precio{
-
+    font-size: 14px;
     position: relative;
     top: 80px;
     left: -160px;
@@ -250,7 +258,7 @@ h1 {
 }
 
 .error-message-dir{
-
+    font-size: 14px;
     position: relative;
     top: 10px;
     left: -230px;
@@ -282,7 +290,7 @@ h1 {
 }
 
 .error-message-codigo{
-
+    font-size: 14px;
     position: relative;
     top: 15px;
     left: 130px;
@@ -314,7 +322,7 @@ h1 {
 }
 
 .error-message-desc{
-
+    font-size: 14px;
     position: relative;
     top: 5px;
     left: -230px;

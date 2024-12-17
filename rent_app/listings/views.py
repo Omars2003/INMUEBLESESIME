@@ -88,7 +88,7 @@ class CustomLoginView(View):
 @login_required      
 def logout_and_redirect_mis_inmuebles(request):
     logout(request)  # Cerrar sesión del usuario
-    return redirect('mis_inmuebles')  # Redirigir a la página de "Mis inmuebles"
+    return redirect('home')  # Redirigir a la página de "Mis inmuebles"
 
 @login_required
 def detalle_inmueble(request, inmueble_id):

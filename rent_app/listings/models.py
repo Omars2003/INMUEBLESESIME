@@ -35,6 +35,7 @@ class Inmueble(models.Model):
     direccion = models.CharField(max_length=200)
     codigo_postal = models.CharField(max_length=5)
     descripcion = models.TextField(max_length=500)
+
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     numero_contacto = models.CharField(max_length=10)
 

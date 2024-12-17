@@ -67,7 +67,7 @@
                                     {% endif %}
                                 {% endfor %}
                             </div>
-                            <strong>{{ comentario.usuario.first_name }} {{ comentario.usuario.last_name }}</strong> - {{ comentario.fecha_creacion|date:"d M Y" }}
+                            <strong>{{ comentario.usuario.first_name }} {{ comentario.usuario.last_name }}</strong>
                             {% if comentario.verificado %}
                                 <span style="color: #28a745;">✔ </span>
                             {% endif %}

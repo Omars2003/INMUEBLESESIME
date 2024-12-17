@@ -12,7 +12,7 @@
                     <h3>{{ reserva.inmueble.tipo_inmueble }} - {{ reserva.inmueble.direccion }}</h3>
                     <p><strong>Precio:</strong> MXN {{ reserva.inmueble.precio }}</p>
                     <p><strong>Fecha de reserva:</strong> {{ reserva.fecha_reserva|date:"d M Y" }}</p>
-                    <a href="{% url 'inmueble_detalle' reserva.inmueble.id %}" class="btn" style="background-color: #007bff; color: white; text-decoration: none;">Ver Detalles</a>
+                  <a href="{% url 'inmueble_detalle' reserva.inmueble.id %}" class="btn" style="color: rgb(17, 49, 230); text-decoration: none;">Ver Detalles</a>
                 </li>
             {% endfor %}
         </ul>

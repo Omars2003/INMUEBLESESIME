@@ -70,7 +70,8 @@
                 <!-- Campo para Precio -->
                 <div class="form-group">
                     <label for="precio" class="precio_texto">Precio</label>
-                    <input type="number" name="precio" class="precio" placeholder="MXN" value="{{ inmueble.precio }}" step="0.01" required>
+                    <input type="number" name="precio" class="precio" placeholder="2000" 
+                    value="{{ inmueble_form.instance.precio|floatformat:2|default:'' }}"  step="0.01" required>
                 </div>
 
                 <!-- Campo para Dirección -->
